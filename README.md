@@ -110,8 +110,8 @@ held-out scenes, target classes, and seeds.
 
 ![MemoryGuard vs passive baseline: side-by-side](videos/demo_comparison.gif)
 
-*Left: a passive agent acting on stale memory arrives at the remembered location (red X) and finds
-nothing. Right: MemoryGuard verifies the memory, refreshes it, navigates to the object's new
+*Right: a passive agent acting on stale memory arrives at the remembered location (red X) and finds
+nothing. Left: MemoryGuard verifies the memory, refreshes it, navigates to the object's new
 location (green circle), and picks it up. Rendered from real simulator frames; full-resolution
 clips are in [`videos/`](videos/).*
 
