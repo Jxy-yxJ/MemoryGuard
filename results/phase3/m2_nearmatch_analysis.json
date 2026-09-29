@@ -1,0 +1,136 @@
+{
+  "design": {
+    "mode": "near-match trigger, no class floors (missing floors file)",
+    "rounds": 15,
+    "case": "FloorPlan202 Box seeds 163/191"
+  },
+  "totals": {
+    "pattern_sessions": 5,
+    "fn_events": 0,
+    "recoveries": 10,
+    "success": 30,
+    "cases": 30
+  },
+  "per_round": {
+    "nm_r15": {
+      "pattern": true,
+      "fn": 0,
+      "triggers": 2,
+      "recovered": 2,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r13": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r12": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r4": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r2": {
+      "pattern": true,
+      "fn": 0,
+      "triggers": 2,
+      "recovered": 2,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r5": {
+      "pattern": true,
+      "fn": 0,
+      "triggers": 2,
+      "recovered": 2,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r6": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r1": {
+      "pattern": true,
+      "fn": 0,
+      "triggers": 2,
+      "recovered": 2,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r10": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r7": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r9": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r8": {
+      "pattern": true,
+      "fn": 0,
+      "triggers": 2,
+      "recovered": 2,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r3": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r11": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    },
+    "nm_r14": {
+      "pattern": false,
+      "fn": 0,
+      "triggers": 0,
+      "recovered": 0,
+      "success": 2,
+      "cases": 2
+    }
+  }
+}

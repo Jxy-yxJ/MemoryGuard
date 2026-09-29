@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-28",
+  "design": "refine-logs/M3_DESIGN_allocation.md",
+  "case_list": "results/0514_m3_allocation/set_v1/case_list_allocation_mixed_v1.json",
+  "case_list_sha16": "b67c479d600ae18f",
+  "reliability_floors": "results/0514_m2_reliability/verifier_reliability.json",
+  "reliability_floors_sha16": "3dbb019c6bb4ff94",
+  "primary_arm_config": {
+    "verification_budget": 1,
+    "budget_scope": "per-case",
+    "policies": [
+      "deployed",
+      "uniform",
+      "reliability-first"
+    ]
+  },
+  "secondary_deferred": {
+    "k": 2,
+    "unbounded_control": true
+  },
+  "boundary": "frozen before any allocation arm run; primary endpoint = per-key stale-target selection at k=1"
+}

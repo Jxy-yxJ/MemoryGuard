@@ -1,0 +1,35 @@
+{
+  "dataset": "results/0514_m1_decision_points/decision_point_dataset.csv",
+  "type_only": {
+    "auc": 0.9962,
+    "ece": 0.2317,
+    "n": 2281
+  },
+  "type_position": {
+    "auc": 0.9957,
+    "ece": 0.2309,
+    "n": 2281
+  },
+  "density_only": {
+    "auc": 0.9382,
+    "ece": 0.1487,
+    "n": 2281
+  },
+  "full_model": {
+    "auc": 0.9946,
+    "ece": 0.0487,
+    "n": 2281
+  },
+  "movable_subset": {
+    "auc": 0.9278,
+    "ece": 0.0984,
+    "n": 109,
+    "movable_types": [
+      "Box",
+      "Kettle",
+      "Pan",
+      "Pillow",
+      "Pot"
+    ]
+  }
+}

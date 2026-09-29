@@ -1,0 +1,84 @@
+{
+  "paired_cases": 71,
+  "only_p0": [],
+  "only_p1": [],
+  "p0": {
+    "total_cases": 71,
+    "verified_cases": 71,
+    "skipped_unverified": 0,
+    "oracle_agreement": 69,
+    "false_negatives": 2,
+    "false_positives": 0,
+    "fn_cases": [
+      [
+        "FloorPlan202",
+        163,
+        "Box"
+      ],
+      [
+        "FloorPlan202",
+        191,
+        "Box"
+      ]
+    ],
+    "success": 62,
+    "task_evaluated": 69,
+    "reobserve_outcomes": {
+      "not_triggered": 71,
+      "confirmed_not_stale": 0,
+      "recovered_stale": 0,
+      "failed": 0
+    }
+  },
+  "p1": {
+    "total_cases": 71,
+    "verified_cases": 71,
+    "skipped_unverified": 0,
+    "oracle_agreement": 71,
+    "false_negatives": 0,
+    "false_positives": 0,
+    "fn_cases": [],
+    "success": 64,
+    "task_evaluated": 71,
+    "reobserve_outcomes": {
+      "not_triggered": 69,
+      "confirmed_not_stale": 0,
+      "recovered_stale": 2,
+      "failed": 0
+    }
+  },
+  "paired_fn": {
+    "both_fn": [],
+    "p0_only_fn": [
+      [
+        "FloorPlan202",
+        163,
+        "Box"
+      ],
+      [
+        "FloorPlan202",
+        191,
+        "Box"
+      ]
+    ],
+    "p1_only_fn": []
+  },
+  "paired_success": {
+    "both": 62,
+    "p0_only": 0,
+    "p1_only": 2
+  },
+  "p1_recovered_stale_cases": [
+    [
+      "FloorPlan202",
+      163,
+      "Box"
+    ],
+    [
+      "FloorPlan202",
+      191,
+      "Box"
+    ]
+  ],
+  "boundary": "paired descriptive analysis on the frozen reliability set; n=56; FN events are rare"
+}

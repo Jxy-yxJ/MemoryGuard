@@ -1,0 +1,34 @@
+{
+  "rows": 241,
+  "keys": 97,
+  "features": [
+    "expected_verification_value",
+    "p_stale_estimate",
+    "same_type_scene_total",
+    "same_type_nearby_count",
+    "same_type_density_score",
+    "class=Apple",
+    "class=Book",
+    "class=Box",
+    "class=CellPhone",
+    "class=Cup",
+    "class=Knife",
+    "class=Mug",
+    "class=Newspaper",
+    "class=Pencil",
+    "class=Potato",
+    "class=RemoteControl",
+    "class=SoapBottle",
+    "class=Tomato"
+  ],
+  "learned": {
+    "leave_scene_out_auc": 0.7614,
+    "per_key_top1_accuracy": 0.732
+  },
+  "deployed_ev": {
+    "auc": 0.6822,
+    "per_key_top1_accuracy": 0.7216,
+    "realized_k1_selection_rate": 0.7216
+  },
+  "interpretation_hint": "if learned top1 ~ EV top1, static pre-verification signals are information-limited for allocation"
+}

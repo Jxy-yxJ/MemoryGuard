@@ -1,0 +1,207 @@
+{
+  "sources": [
+    "results/0514_m1_decision_points/*/*/live_gsam_closed_loop.csv",
+    "results/0514_corrected_interaction_v1/*_active/live_gsam_closed_loop.csv"
+  ],
+  "total_verified_rows": 181,
+  "total_fn": 4,
+  "global_fn_rate": 0.0247,
+  "prior_strength": 10.0,
+  "classes": {
+    "Apple": {
+      "n": 12,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0112,
+      "posterior_ci95": [
+        0.0,
+        0.0543
+      ],
+      "conservative_floor": 0.0543,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Book": {
+      "n": 4,
+      "fn": 2,
+      "empirical_fn_rate": 0.5,
+      "posterior_mean": 0.1605,
+      "posterior_ci95": [
+        0.0,
+        0.3463
+      ],
+      "conservative_floor": 0.3463,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Box": {
+      "n": 8,
+      "fn": 2,
+      "empirical_fn_rate": 0.25,
+      "posterior_mean": 0.1248,
+      "posterior_ci95": [
+        0.0,
+        0.2735
+      ],
+      "conservative_floor": 0.2735,
+      "ambiguity_rows": 2,
+      "ambiguity_fn": 2
+    },
+    "CD": {
+      "n": 8,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0137,
+      "posterior_ci95": [
+        0.0,
+        0.0661
+      ],
+      "conservative_floor": 0.0661,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "CellPhone": {
+      "n": 9,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.013,
+      "posterior_ci95": [
+        0.0,
+        0.0627
+      ],
+      "conservative_floor": 0.0627,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Cup": {
+      "n": 18,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0088,
+      "posterior_ci95": [
+        0.0,
+        0.0429
+      ],
+      "conservative_floor": 0.0429,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Dumbbell": {
+      "n": 10,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0124,
+      "posterior_ci95": [
+        0.0,
+        0.0596
+      ],
+      "conservative_floor": 0.0596,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Knife": {
+      "n": 8,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0137,
+      "posterior_ci95": [
+        0.0,
+        0.0661
+      ],
+      "conservative_floor": 0.0661,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Mug": {
+      "n": 10,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0124,
+      "posterior_ci95": [
+        0.0,
+        0.0596
+      ],
+      "conservative_floor": 0.0596,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Newspaper": {
+      "n": 19,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0085,
+      "posterior_ci95": [
+        0.0,
+        0.0414
+      ],
+      "conservative_floor": 0.0414,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Pencil": {
+      "n": 17,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0092,
+      "posterior_ci95": [
+        0.0,
+        0.0444
+      ],
+      "conservative_floor": 0.0444,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Potato": {
+      "n": 24,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0073,
+      "posterior_ci95": [
+        0.0,
+        0.0354
+      ],
+      "conservative_floor": 0.0354,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "RemoteControl": {
+      "n": 8,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0137,
+      "posterior_ci95": [
+        0.0,
+        0.0661
+      ],
+      "conservative_floor": 0.0661,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "SoapBottle": {
+      "n": 11,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0118,
+      "posterior_ci95": [
+        0.0,
+        0.0568
+      ],
+      "conservative_floor": 0.0568,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    },
+    "Tomato": {
+      "n": 15,
+      "fn": 0,
+      "empirical_fn_rate": 0.0,
+      "posterior_mean": 0.0099,
+      "posterior_ci95": [
+        0.0,
+        0.0479
+      ],
+      "conservative_floor": 0.0479,
+      "ambiguity_rows": 0,
+      "ambiguity_fn": 0
+    }
+  }
+}

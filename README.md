@@ -115,6 +115,13 @@ nothing. Right: MemoryGuard verifies the memory, refreshes it, navigates to the 
 location (green circle), and picks it up. Rendered from real simulator frames; full-resolution
 clips are in [`videos/`](videos/).*
 
+Phase 3 adds the reliability story as a paired demo: the
+[failure mode](videos/m2_reliability_Box_163_baseline.mp4) (single-view "fresh" verdict on a
+moved Box — no action, task fails) and the
+[recovery](videos/m2_reliability_Box_163_active.mp4) (second-pose re-observation flips the
+verdict to stale; memory refreshed; Box picked up). Both clips end with an on-map
+"Box in hand" marker when the pickup succeeds.
+
 ---
 
 ## Highlights
@@ -200,11 +207,56 @@ verify–update–act loop.
 
 Artifacts: `results/vlm_agent_multi_round_v1/`.
 
+### 6. Reliability-aware maintenance: repairing a verifier false-negative mode (Phase 3)
+
+A detector false negative can silently disable maintenance. On two Box cases the Grounded-SAM2
+verifier returns a confident "fresh" verdict while the target instance is invisible, because a
+detection lands near the remembered location's image projection — the failure mode that
+drops downstream success to the passive baseline.
+
+- **Failure mode:** 4/181 verified rows are false negatives, concentrated in confusable classes
+  (Book 2/4, Box 2/8); the mode has a clean signature (no target in the revisit sweep; nearest
+  detection below matched-distance 0.05).
+- **Mechanism:** on a "fresh" verdict for a suspicious case, re-observe from up to two alternate
+  poses and adopt the first stale re-verdict (default-off flag; zero false triggers observed).
+- **Pre-registered randomized replication (30 rounds x 3 arms, 90 sessions, zero failures):**
+  the armed trigger recovers **16/16** observed pattern events vs **0/24** with the trigger
+  disabled (Fisher exact **p = 1.6e-11**); paired case success **60/60 vs 48/60** (McNemar
+  **p = 4.9e-4**), falling to **36/60** in the disarmed ablation.
+- **Class-agnostic variant:** a near-match trigger that uses no per-class calibration recovers
+  **10/10** events over 15 further rounds with a deliberately absent class-floor table.
+
+Artifacts: [`results/phase3/`](results/phase3/) (summaries + frozen schedules) ·
+Demos: [failure mode](videos/m2_reliability_Box_163_baseline.mp4) ·
+[recovery](videos/m2_reliability_Box_163_active.mp4) (seed-191 copies alongside).
+
+### 7. What the budget buys, and its limits (Phase 3)
+
+- **Diagnosis:** on 2,281 decision-point records, staleness is near-deterministic by object
+  category under randomized spawn (static fixtures 0.00 vs movable objects 0.88–1.00 per-type
+  rates; type-only CV AUC 0.996). Calibrating P(stale) is saturated; the deployment-relevant
+  uncertainty is the verifier.
+- **Selection:** on a frozen 97-key mixed set at one verification per case, the deployed
+  expected-value ranking selects the stale target **72.2%** vs **61.9%** for a uniform order
+  (McNemar p = 6.3e-3); a reliability-first ranking is harmful (**38.1%**).
+- **Information ceiling:** a learned ranker over all policy-visible signals reaches only
+  **73.2%** top-1, so the remaining selection headroom is information-limited.
+- **Budget scaling:** two verifications per case reach **94.8%** selection and **76.3%** success,
+  within 3.1 points of the no-constraint ceiling (**79.4%**, which is interaction-limited).
+- **Observation limit:** targets are visible from the spawn pose after the change in only
+  **2/30** keys (6.7%), so remote "glance-first" verification cannot carry the workload.
+
+Artifacts: [`results/phase3/`](results/phase3/).
+
 ### Figures
 
 | Budget / verification-value curve | Component ablation | Mixed-challenge progression |
 |---|---|---|
 | ![budget curve](figures/fig_0514_budget_curve.png) | ![component ablation](figures/fig_0514_component_ablation.png) | ![mixed challenge](figures/fig_0514_mixed_challenge.png) |
+
+| Phase 3: study map with embedded evidence | Verifier failure-mode signature & intervention | Allocation and budget scaling |
+|---|---|---|
+| ![study map](figures/phase3/study_map.png) | ![verifier reliability](figures/phase3/verifier_reliability.png) | ![allocation](figures/phase3/allocation_and_budget.png) |
 
 ---
 

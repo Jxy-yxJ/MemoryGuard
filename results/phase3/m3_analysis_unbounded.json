@@ -1,0 +1,25 @@
+{
+  "case_list": "results/0514_m3_allocation/set_v1/case_list_allocation_mixed_v1.json",
+  "config": {
+    "label": "unbounded control (budget 99 per-case)"
+  },
+  "arm_dirs": {
+    "deployed": "deployed_unbounded"
+  },
+  "arms": {
+    "deployed": {
+      "keys": 97,
+      "stale_selected": 97,
+      "stale_selected_rate": 1.0,
+      "mean_easy_selected": 1.2577,
+      "stale_success_when_selected": 77,
+      "stale_success_evaluated": 97
+    }
+  },
+  "comparisons": {},
+  "oracle_upper_bound": {
+    "stale_selected_rate": 1.0,
+    "note": "oracle selects the stale target first; gap = 1 - arm rate"
+  },
+  "boundary": "k=1 per-case allocation on the frozen 97-key mixed set; paired McNemar on stale-target selection; no success-superiority claims without a powered success endpoint"
+}

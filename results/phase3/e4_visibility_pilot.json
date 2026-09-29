@@ -1,0 +1,6 @@
+{
+  "keys": 30,
+  "visible_from_spawn": 2,
+  "visible_fraction": 0.0667,
+  "note": "upper bound on remote glance-first verification applicability"
+}

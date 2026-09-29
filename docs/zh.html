@@ -108,6 +108,18 @@
       <source src="assets/FloorPlan1_Apple_7_comparison.mp4" type="video/mp4">
     </video>
     <p class="caption">同一案例（<code>FloorPlan1 / Apple / seed 7</code>）的被动 vs. 主动并排对比。另一段视频展示货架目标通过有界位姿回退被成功抓取：<a href="https://github.com/Jxy-yxJ/MemoryGuard/blob/main/videos/FloorPlan5_Knife_163_active.mp4">FloorPlan5 / Knife / seed 163</a>。</p>
+    <h3>Phase 3：可靠性感知维护</h3>
+    <div class="demo-media">
+      <img src="assets/m2_reliability.gif" alt="Phase 3 恢复演示：单视角把已移动的 Box 判为 fresh，换位姿复验翻转为 stale 并成功抓取。">
+    </div>
+    <p class="caption"><b>失效模式 → 恢复。</b>基线（单视角）：验证器自信地认为 Box 仍在记忆位置（目标实例不可见时，某个检测落在记忆投影附近）——不采取动作，任务失败。武装触发：换位姿复验后近匹配消失，判定翻转为 <i>stale</i>，刷新记忆并成功抓取（地图出现 "Box in hand" 标记）。</p>
+    <video controls muted loop playsinline preload="metadata">
+      <source src="assets/m2_reliability_Box_163_baseline.mp4" type="video/mp4">
+    </video>
+    <video controls muted loop playsinline preload="metadata">
+      <source src="assets/m2_reliability_Box_163_active.mp4" type="video/mp4">
+    </video>
+    <p class="caption">同一案例（<code>FloorPlan202 / Box / seed 163</code>）的基线（上）与恢复（下）。预注册随机化复现（30 轮 × 3 臂、90 会话）中，武装触发恢复 <b>16/16</b> 个模式事件，关闭时为 <b>0/24</b>（Fisher 精确 p = 1.6e-11）；配对案例成功率 <b>60/60 vs 48/60</b>（McNemar p = 4.9e-4）。</p>
   </section>
 
   <section id="problem">
@@ -169,8 +181,26 @@
     </figure>
     <figure>
       <img src="assets/fig_0514_component_ablation.png" alt="核验信号的组件消融">
-      <figcaption>组件消融：视觉混淆先验解释了大部分收益，空间密度在该匹配协议上没有贡献。</figcaption>
+            <figcaption>组件消融：视觉混淆先验解释了全部下降；空间密度在匹配协议上没有贡献。</figcaption>
     </figure>
+
+    <h3>Phase 3：有界预算下的可靠性感知维护</h3>
+    <div class="kpis">
+      <div class="kpi"><b>16/16</b><small>可靠性触发恢复的模式事件数（关闭为 0/24），Fisher 精确 p = 1.6e-11</small></div>
+      <div class="kpi"><b>60/60 vs 48/60</b><small>配对案例成功率（武装 vs 基线），McNemar 精确 p = 4.9e-4</small></div>
+      <div class="kpi"><b>72.2% vs 61.9%</b><small>每案例一次验证预算下，部署 EV 与均匀顺序的陈旧目标选择率（p = 6.3e-3）</small></div>
+    </div>
+    <ul class="clean">
+      <li><b>诊断：</b>2,281 条决策点记录显示陈旧性几乎由类别决定（静态 0.00 vs 可移动 0.88–1.00；仅类别 CV AUC 0.996）——P(stale) 校准饱和，真正的不确定性在验证器。</li>
+      <li><b>判定：</b>验证器假阴性表现为目标不可见时的自信 "fresh" + 近记忆位置检测；换位姿复验可修复（见上），并给出无需按类校准的 near-match 变体（10/10）。</li>
+      <li><b>选择：</b>绑定预算下部署排序优于均匀；使用全部策略可见信号的学习排序 top-1 仅 73.2%（信息受限）。</li>
+      <li><b>预算与极限：</b>每案例两次验证达到 94.8% 选择 / 76.3% 成功，距 79.4% 无约束天花板 3.1 个百分点（受交互限制）；远程验证受几何限制（出生点可见率仅 6.7%）。</li>
+    </ul>
+    <figure>
+      <img src="assets/fig_phase3_verifier_reliability.png" alt="左：区分假阴性与正确判定的 matched-distance 签名；右：各臂成功率与恢复计数。">
+      <figcaption>Phase 3 判定研究：单一 matched-distance 签名即可分离假阴性与正确判定（左）；随机化复现量化了干预效果（右）。</figcaption>
+    </figure>
+    <p class="caption">机器可读摘要与冻结计划：<a href="https://github.com/Jxy-yxJ/MemoryGuard/tree/main/results/phase3">results/phase3/</a>。全部数字由预注册运行生成，并通过 60 项工件审计（0 不一致）。</p>
   </section>
 
   <section id="protocol">

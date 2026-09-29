@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-27",
+  "policy": {
+    "name": "reliability-reobserve",
+    "threshold": 0.1,
+    "max_poses": 2,
+    "trigger": "not_stale AND class_floor>=0.10 AND (weak_evidence OR visibility_error==target_not_visible_after_revisit_sweep)"
+  },
+  "reliability_source": "results/0514_m2_reliability/verifier_reliability.json",
+  "reliability_sha16": "3dbb019c6bb4ff94",
+  "case_lists": {
+    "original": {
+      "path": "results/0514_paired_hard_challenge_screen_v1/case_list_paired_hard_challenge_all_qualifying_v1.json",
+      "sha16": "667c8685a2f95d11"
+    },
+    "holdout_v1": {
+      "path": "results/0514_paired_holdout_screen_v1/case_list_paired_hard_challenge_frozen_v1.json",
+      "sha16": "824d458d473de7fa"
+    },
+    "holdout_v2": {
+      "path": "results/0514_paired_holdout_v2_screen/case_list_paired_hard_challenge_frozen_v2.json",
+      "sha16": "0ec4b321c911b889"
+    }
+  },
+  "fn_slice_cases": [
+    {
+      "list": "original",
+      "scene": "FloorPlan1",
+      "seed": 17,
+      "target": "Book",
+      "case_id": "FloorPlan1|Book|17"
+    },
+    {
+      "list": "original",
+      "scene": "FloorPlan1",
+      "seed": 73,
+      "target": "Book",
+      "case_id": "FloorPlan1|Book|73"
+    },
+    {
+      "list": "holdout_v2",
+      "scene": "FloorPlan202",
+      "seed": 163,
+      "target": "Box",
+      "case_id": "FloorPlan202|Box|163"
+    },
+    {
+      "list": "holdout_v2",
+      "scene": "FloorPlan202",
+      "seed": 191,
+      "target": "Box",
+      "case_id": "FloorPlan202|Box|191"
+    }
+  ],
+  "fn_slice_note": "Book/Box cases in the frozen lists, covering the 4 observed FN rows (FP1 Book seeds 17,73; FP202 Box seeds 163,191).",
+  "boundary": "frozen before any P1 run; no outcomes observed for the reliability-reobserve policy"
+}

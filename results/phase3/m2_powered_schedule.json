@@ -1,0 +1,254 @@
+{
+  "date": "2026-09-29",
+  "seed": 20260929,
+  "rounds": 30,
+  "arms": [
+    "p0",
+    "p1",
+    "p1w"
+  ],
+  "schedule": [
+    {
+      "round": 1,
+      "order": [
+        "p0",
+        "p1w",
+        "p1"
+      ]
+    },
+    {
+      "round": 2,
+      "order": [
+        "p0",
+        "p1",
+        "p1w"
+      ]
+    },
+    {
+      "round": 3,
+      "order": [
+        "p1w",
+        "p1",
+        "p0"
+      ]
+    },
+    {
+      "round": 4,
+      "order": [
+        "p1w",
+        "p1",
+        "p0"
+      ]
+    },
+    {
+      "round": 5,
+      "order": [
+        "p1w",
+        "p0",
+        "p1"
+      ]
+    },
+    {
+      "round": 6,
+      "order": [
+        "p1",
+        "p0",
+        "p1w"
+      ]
+    },
+    {
+      "round": 7,
+      "order": [
+        "p0",
+        "p1w",
+        "p1"
+      ]
+    },
+    {
+      "round": 8,
+      "order": [
+        "p0",
+        "p1w",
+        "p1"
+      ]
+    },
+    {
+      "round": 9,
+      "order": [
+        "p0",
+        "p1",
+        "p1w"
+      ]
+    },
+    {
+      "round": 10,
+      "order": [
+        "p1",
+        "p0",
+        "p1w"
+      ]
+    },
+    {
+      "round": 11,
+      "order": [
+        "p1",
+        "p0",
+        "p1w"
+      ]
+    },
+    {
+      "round": 12,
+      "order": [
+        "p1w",
+        "p1",
+        "p0"
+      ]
+    },
+    {
+      "round": 13,
+      "order": [
+        "p1w",
+        "p0",
+        "p1"
+      ]
+    },
+    {
+      "round": 14,
+      "order": [
+        "p1w",
+        "p1",
+        "p0"
+      ]
+    },
+    {
+      "round": 15,
+      "order": [
+        "p0",
+        "p1",
+        "p1w"
+      ]
+    },
+    {
+      "round": 16,
+      "order": [
+        "p1w",
+        "p0",
+        "p1"
+      ]
+    },
+    {
+      "round": 17,
+      "order": [
+        "p1",
+        "p1w",
+        "p0"
+      ]
+    },
+    {
+      "round": 18,
+      "order": [
+        "p0",
+        "p1",
+        "p1w"
+      ]
+    },
+    {
+      "round": 19,
+      "order": [
+        "p0",
+        "p1w",
+        "p1"
+      ]
+    },
+    {
+      "round": 20,
+      "order": [
+        "p0",
+        "p1",
+        "p1w"
+      ]
+    },
+    {
+      "round": 21,
+      "order": [
+        "p1w",
+        "p1",
+        "p0"
+      ]
+    },
+    {
+      "round": 22,
+      "order": [
+        "p1w",
+        "p0",
+        "p1"
+      ]
+    },
+    {
+      "round": 23,
+      "order": [
+        "p1",
+        "p0",
+        "p1w"
+      ]
+    },
+    {
+      "round": 24,
+      "order": [
+        "p0",
+        "p1",
+        "p1w"
+      ]
+    },
+    {
+      "round": 25,
+      "order": [
+        "p1w",
+        "p1",
+        "p0"
+      ]
+    },
+    {
+      "round": 26,
+      "order": [
+        "p1w",
+        "p0",
+        "p1"
+      ]
+    },
+    {
+      "round": 27,
+      "order": [
+        "p0",
+        "p1w",
+        "p1"
+      ]
+    },
+    {
+      "round": 28,
+      "order": [
+        "p0",
+        "p1",
+        "p1w"
+      ]
+    },
+    {
+      "round": 29,
+      "order": [
+        "p0",
+        "p1",
+        "p1w"
+      ]
+    },
+    {
+      "round": 30,
+      "order": [
+        "p1",
+        "p1w",
+        "p0"
+      ]
+    }
+  ],
+  "case_list": "results/0514_m2_reliability/box2_replication_list.json",
+  "note": "arm order randomized per round from the frozen seed; schedule fixed before any run"
+}

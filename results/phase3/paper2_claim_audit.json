@@ -1,0 +1,327 @@
+{
+  "checks": 60,
+  "failures": [],
+  "status": "PASS",
+  "detail": [
+    {
+      "claim": "records = 2281",
+      "stated": 2281,
+      "actual": 2281
+    },
+    {
+      "claim": "stale = 736",
+      "stated": 736,
+      "actual": 736
+    },
+    {
+      "claim": "overall stale rate = 0.323",
+      "stated": 0.323,
+      "actual": 0.3227
+    },
+    {
+      "claim": "target stale rate = 0.949",
+      "stated": 0.949,
+      "actual": 0.9492
+    },
+    {
+      "claim": "non-target stale rate = 28.8% (1dp)",
+      "stated": 0.288,
+      "actual": 0.288
+    },
+    {
+      "claim": "type-only AUC = 0.9962",
+      "stated": 0.9962,
+      "actual": 0.9962
+    },
+    {
+      "claim": "type+position AUC = 0.9957",
+      "stated": 0.9957,
+      "actual": 0.9957
+    },
+    {
+      "claim": "density-only AUC = 0.9382",
+      "stated": 0.9382,
+      "actual": 0.9382
+    },
+    {
+      "claim": "full AUC = 0.9946",
+      "stated": 0.9946,
+      "actual": 0.9946
+    },
+    {
+      "claim": "full ECE = 0.0487",
+      "stated": 0.0487,
+      "actual": 0.0487
+    },
+    {
+      "claim": "movable AUC = 0.9278",
+      "stated": 0.9278,
+      "actual": 0.9278
+    },
+    {
+      "claim": "movable ECE = 0.0984",
+      "stated": 0.0984,
+      "actual": 0.0984
+    },
+    {
+      "claim": "verified rows = 181",
+      "stated": 181,
+      "actual": 181
+    },
+    {
+      "claim": "FN = 4",
+      "stated": 4,
+      "actual": 4
+    },
+    {
+      "claim": "Book n=4 fn=2",
+      "stated": [
+        4,
+        2
+      ],
+      "actual": [
+        4,
+        2
+      ]
+    },
+    {
+      "claim": "Box n=8 fn=2",
+      "stated": [
+        8,
+        2
+      ],
+      "actual": [
+        8,
+        2
+      ]
+    },
+    {
+      "claim": "Book floor ~ 0.35",
+      "stated": 0.35,
+      "actual": 0.35
+    },
+    {
+      "claim": "Box floor ~ 0.27",
+      "stated": 0.27,
+      "actual": 0.27
+    },
+    {
+      "claim": "three-list FN p0 = 2",
+      "stated": 2,
+      "actual": 2
+    },
+    {
+      "claim": "three-list FN p1 = 0",
+      "stated": 0,
+      "actual": 0
+    },
+    {
+      "claim": "three-list success p0 = 62",
+      "stated": 62,
+      "actual": 62
+    },
+    {
+      "claim": "three-list success p1 = 64",
+      "stated": 64,
+      "actual": 64
+    },
+    {
+      "claim": "three-list not_triggered = 69",
+      "stated": 69,
+      "actual": 69
+    },
+    {
+      "claim": "powered sessions/arm = 30",
+      "stated": [
+        30,
+        30,
+        30
+      ],
+      "actual": [
+        30,
+        30,
+        30
+      ]
+    },
+    {
+      "claim": "p0 pattern sessions = 6",
+      "stated": 6,
+      "actual": 6
+    },
+    {
+      "claim": "p1 pattern sessions = 8",
+      "stated": 8,
+      "actual": 8
+    },
+    {
+      "claim": "p1w pattern sessions = 12",
+      "stated": 12,
+      "actual": 12
+    },
+    {
+      "claim": "p0 FN = 12",
+      "stated": 12,
+      "actual": 12
+    },
+    {
+      "claim": "p1 FN = 0",
+      "stated": 0,
+      "actual": 0
+    },
+    {
+      "claim": "p1w FN = 24",
+      "stated": 24,
+      "actual": 24
+    },
+    {
+      "claim": "p1 recoveries = 16",
+      "stated": 16,
+      "actual": 16
+    },
+    {
+      "claim": "p0 success = 48",
+      "stated": 48,
+      "actual": 48
+    },
+    {
+      "claim": "p1 success = 60",
+      "stated": 60,
+      "actual": 60
+    },
+    {
+      "claim": "p1w success = 36",
+      "stated": 36,
+      "actual": 36
+    },
+    {
+      "claim": "randomized asymmetry p0-vs-p1w not significant",
+      "stated": true,
+      "actual": true
+    },
+    {
+      "claim": "randomized asymmetry p1-vs-p1w not significant",
+      "stated": true,
+      "actual": true
+    },
+    {
+      "claim": "conditional Fisher = 1.59e-11",
+      "stated": 1.6e-11,
+      "actual": 1.6e-11
+    },
+    {
+      "claim": "signature FN n = 30",
+      "stated": 30,
+      "actual": 30
+    },
+    {
+      "claim": "signature correct n = 68",
+      "stated": 68,
+      "actual": 68
+    },
+    {
+      "claim": "FN range [0.0136, 0.0138]",
+      "stated": true,
+      "actual": true
+    },
+    {
+      "claim": "correct range within [0.0998, 0.1003]",
+      "stated": true,
+      "actual": true
+    },
+    {
+      "claim": "near-match recoveries = 10",
+      "stated": 10,
+      "actual": 10
+    },
+    {
+      "claim": "near-match successes = 30",
+      "stated": 30,
+      "actual": 30
+    },
+    {
+      "claim": "allocation keys = 97",
+      "stated": 97,
+      "actual": 97
+    },
+    {
+      "claim": "EV selected = 70",
+      "stated": 70,
+      "actual": 70
+    },
+    {
+      "claim": "uniform selected = 60",
+      "stated": 60,
+      "actual": 60
+    },
+    {
+      "claim": "reliability-first selected = 37",
+      "stated": 37,
+      "actual": 37
+    },
+    {
+      "claim": "EV vs uniform McNemar = 0.0063",
+      "stated": 0.0063,
+      "actual": 0.0063
+    },
+    {
+      "claim": "uniform vs relfirst McNemar = 0.0076",
+      "stated": 0.0076,
+      "actual": 0.0076
+    },
+    {
+      "claim": "k=2 EV selected = 92",
+      "stated": 92,
+      "actual": 92
+    },
+    {
+      "claim": "unbounded selected = 97",
+      "stated": 97,
+      "actual": 97
+    },
+    {
+      "claim": "unbounded success = 77",
+      "stated": 77,
+      "actual": 77
+    },
+    {
+      "claim": "k=2 success = 74",
+      "stated": 74,
+      "actual": 74
+    },
+    {
+      "claim": "learned CV AUC = 0.7614",
+      "stated": 0.7614,
+      "actual": 0.7614
+    },
+    {
+      "claim": "EV offline AUC = 0.6822",
+      "stated": 0.6822,
+      "actual": 0.6822
+    },
+    {
+      "claim": "learned top-1 = 0.732",
+      "stated": 0.732,
+      "actual": 0.732
+    },
+    {
+      "claim": "EV top-1 = 0.7216",
+      "stated": 0.7216,
+      "actual": 0.7216
+    },
+    {
+      "claim": "pilot keys = 30",
+      "stated": 30,
+      "actual": 30
+    },
+    {
+      "claim": "visible = 2",
+      "stated": 2,
+      "actual": 2
+    },
+    {
+      "claim": "visible fraction = 0.0667",
+      "stated": 0.0667,
+      "actual": 0.0667
+    }
+  ]
+}

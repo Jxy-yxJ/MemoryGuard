@@ -1,0 +1,68 @@
+{
+  "case_list": "results/0514_m3_allocation/set_v1/case_list_allocation_mixed_v1.json",
+  "config": {
+    "label": "k=2 per-case"
+  },
+  "arm_dirs": {
+    "deployed": "deployed_k2",
+    "uniform": "uniform_k2",
+    "reliability-first": "reliability_first_k2"
+  },
+  "arms": {
+    "deployed": {
+      "keys": 97,
+      "stale_selected": 92,
+      "stale_selected_rate": 0.9485,
+      "mean_easy_selected": 0.9381,
+      "stale_success_when_selected": 74,
+      "stale_success_evaluated": 97
+    },
+    "uniform": {
+      "keys": 97,
+      "stale_selected": 89,
+      "stale_selected_rate": 0.9175,
+      "mean_easy_selected": 0.9691,
+      "stale_success_when_selected": 73,
+      "stale_success_evaluated": 97
+    },
+    "reliability-first": {
+      "keys": 97,
+      "stale_selected": 84,
+      "stale_selected_rate": 0.866,
+      "mean_easy_selected": 1.0206,
+      "stale_success_when_selected": 68,
+      "stale_success_evaluated": 97
+    }
+  },
+  "comparisons": {
+    "deployed_vs_uniform": {
+      "keys": 97,
+      "both": 88,
+      "only_a": 4,
+      "only_b": 1,
+      "neither": 4,
+      "mcnemar_exact_two_sided_p": 0.375
+    },
+    "deployed_vs_reliability-first": {
+      "keys": 97,
+      "both": 81,
+      "only_a": 11,
+      "only_b": 3,
+      "neither": 2,
+      "mcnemar_exact_two_sided_p": 0.0574
+    },
+    "uniform_vs_reliability-first": {
+      "keys": 97,
+      "both": 80,
+      "only_a": 9,
+      "only_b": 4,
+      "neither": 4,
+      "mcnemar_exact_two_sided_p": 0.2668
+    }
+  },
+  "oracle_upper_bound": {
+    "stale_selected_rate": 1.0,
+    "note": "oracle selects the stale target first; gap = 1 - arm rate"
+  },
+  "boundary": "k=1 per-case allocation on the frozen 97-key mixed set; paired McNemar on stale-target selection; no success-superiority claims without a powered success endpoint"
+}

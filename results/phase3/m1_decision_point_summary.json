@@ -1,0 +1,511 @@
+{
+  "total_records": 2281,
+  "matched_records": 2281,
+  "unmatched_records": 0,
+  "overall": {
+    "n": 2281,
+    "stale": 736,
+    "stale_rate": 0.3227
+  },
+  "by_list": {
+    "fresh_small_disp/FloorPlan10_batch": {
+      "n": 264,
+      "stale": 100,
+      "stale_rate": 0.3788
+    },
+    "fresh_small_disp/FloorPlan202_batch": {
+      "n": 108,
+      "stale": 27,
+      "stale_rate": 0.25
+    },
+    "fresh_small_disp/FloorPlan204_batch": {
+      "n": 33,
+      "stale": 15,
+      "stale_rate": 0.4545
+    },
+    "fresh_small_disp/FloorPlan2_batch": {
+      "n": 35,
+      "stale": 14,
+      "stale_rate": 0.4
+    },
+    "fresh_small_disp/FloorPlan302_batch": {
+      "n": 72,
+      "stale": 8,
+      "stale_rate": 0.1111
+    },
+    "fresh_small_disp/FloorPlan303_batch": {
+      "n": 14,
+      "stale": 2,
+      "stale_rate": 0.1429
+    },
+    "fresh_small_disp/FloorPlan4_batch": {
+      "n": 72,
+      "stale": 22,
+      "stale_rate": 0.3056
+    },
+    "fresh_small_disp/FloorPlan5_batch": {
+      "n": 72,
+      "stale": 24,
+      "stale_rate": 0.3333
+    },
+    "fresh_small_disp/FloorPlan6_batch": {
+      "n": 80,
+      "stale": 32,
+      "stale_rate": 0.4
+    },
+    "fresh_small_disp/FloorPlan9_batch": {
+      "n": 230,
+      "stale": 72,
+      "stale_rate": 0.313
+    },
+    "holdout_v1/FloorPlan2_batch": {
+      "n": 7,
+      "stale": 3,
+      "stale_rate": 0.4286
+    },
+    "holdout_v1/FloorPlan302_batch": {
+      "n": 36,
+      "stale": 4,
+      "stale_rate": 0.1111
+    },
+    "holdout_v1/FloorPlan303_batch": {
+      "n": 28,
+      "stale": 4,
+      "stale_rate": 0.1429
+    },
+    "holdout_v1/FloorPlan5_batch": {
+      "n": 72,
+      "stale": 24,
+      "stale_rate": 0.3333
+    },
+    "holdout_v2/FloorPlan10_batch": {
+      "n": 308,
+      "stale": 115,
+      "stale_rate": 0.3734
+    },
+    "holdout_v2/FloorPlan202_batch": {
+      "n": 45,
+      "stale": 13,
+      "stale_rate": 0.2889
+    },
+    "holdout_v2/FloorPlan204_batch": {
+      "n": 33,
+      "stale": 15,
+      "stale_rate": 0.4545
+    },
+    "holdout_v2/FloorPlan4_batch": {
+      "n": 108,
+      "stale": 33,
+      "stale_rate": 0.3056
+    },
+    "holdout_v2/FloorPlan5_batch": {
+      "n": 54,
+      "stale": 18,
+      "stale_rate": 0.3333
+    },
+    "holdout_v2/FloorPlan6_batch": {
+      "n": 60,
+      "stale": 23,
+      "stale_rate": 0.3833
+    },
+    "original/FloorPlan1_batch": {
+      "n": 144,
+      "stale": 40,
+      "stale_rate": 0.2778
+    },
+    "original/FloorPlan201_batch": {
+      "n": 190,
+      "stale": 57,
+      "stale_rate": 0.3
+    },
+    "original/FloorPlan3_batch": {
+      "n": 216,
+      "stale": 71,
+      "stale_rate": 0.3287
+    }
+  },
+  "target_memories": {
+    "n": 118,
+    "stale": 112,
+    "stale_rate": 0.9492
+  },
+  "non_target_memories": {
+    "n": 2163,
+    "stale": 624,
+    "stale_rate": 0.2885
+  },
+  "by_object_type": {
+    "Apple": {
+      "n": 20,
+      "stale": 20,
+      "stale_rate": 1.0
+    },
+    "ArmChair": {
+      "n": 6,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Bed": {
+      "n": 12,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Book": {
+      "n": 8,
+      "stale": 8,
+      "stale_rate": 1.0
+    },
+    "Bowl": {
+      "n": 30,
+      "stale": 29,
+      "stale_rate": 0.9667
+    },
+    "Box": {
+      "n": 23,
+      "stale": 15,
+      "stale_rate": 0.6522
+    },
+    "Bread": {
+      "n": 20,
+      "stale": 20,
+      "stale_rate": 1.0
+    },
+    "ButterKnife": {
+      "n": 42,
+      "stale": 42,
+      "stale_rate": 1.0
+    },
+    "CD": {
+      "n": 6,
+      "stale": 6,
+      "stale_rate": 1.0
+    },
+    "Cabinet": {
+      "n": 214,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "CellPhone": {
+      "n": 18,
+      "stale": 18,
+      "stale_rate": 1.0
+    },
+    "Chair": {
+      "n": 87,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "CoffeeMachine": {
+      "n": 42,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "CoffeeTable": {
+      "n": 23,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "CounterTop": {
+      "n": 142,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "CreditCard": {
+      "n": 14,
+      "stale": 14,
+      "stale_rate": 1.0
+    },
+    "Cup": {
+      "n": 32,
+      "stale": 32,
+      "stale_rate": 1.0
+    },
+    "Desk": {
+      "n": 18,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "DeskLamp": {
+      "n": 6,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "DiningTable": {
+      "n": 29,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "DishSponge": {
+      "n": 23,
+      "stale": 23,
+      "stale_rate": 1.0
+    },
+    "Drawer": {
+      "n": 159,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Dumbbell": {
+      "n": 6,
+      "stale": 6,
+      "stale_rate": 1.0
+    },
+    "Faucet": {
+      "n": 30,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Floor": {
+      "n": 118,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Fork": {
+      "n": 38,
+      "stale": 38,
+      "stale_rate": 1.0
+    },
+    "Fridge": {
+      "n": 24,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "GarbageCan": {
+      "n": 50,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "HousePlant": {
+      "n": 35,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Kettle": {
+      "n": 12,
+      "stale": 10,
+      "stale_rate": 0.8333
+    },
+    "KeyChain": {
+      "n": 6,
+      "stale": 6,
+      "stale_rate": 1.0
+    },
+    "Knife": {
+      "n": 30,
+      "stale": 30,
+      "stale_rate": 1.0
+    },
+    "Ladle": {
+      "n": 5,
+      "stale": 5,
+      "stale_rate": 1.0
+    },
+    "Lettuce": {
+      "n": 7,
+      "stale": 7,
+      "stale_rate": 1.0
+    },
+    "LightSwitch": {
+      "n": 19,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Microwave": {
+      "n": 43,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Mirror": {
+      "n": 12,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Mug": {
+      "n": 36,
+      "stale": 35,
+      "stale_rate": 0.9722
+    },
+    "Newspaper": {
+      "n": 19,
+      "stale": 19,
+      "stale_rate": 1.0
+    },
+    "Pan": {
+      "n": 25,
+      "stale": 21,
+      "stale_rate": 0.84
+    },
+    "PaperTowelRoll": {
+      "n": 13,
+      "stale": 13,
+      "stale_rate": 1.0
+    },
+    "Pen": {
+      "n": 19,
+      "stale": 19,
+      "stale_rate": 1.0
+    },
+    "Pencil": {
+      "n": 19,
+      "stale": 19,
+      "stale_rate": 1.0
+    },
+    "PepperShaker": {
+      "n": 22,
+      "stale": 22,
+      "stale_rate": 1.0
+    },
+    "Pillow": {
+      "n": 17,
+      "stale": 14,
+      "stale_rate": 0.8235
+    },
+    "Plate": {
+      "n": 18,
+      "stale": 18,
+      "stale_rate": 1.0
+    },
+    "Pot": {
+      "n": 32,
+      "stale": 28,
+      "stale_rate": 0.875
+    },
+    "Potato": {
+      "n": 29,
+      "stale": 29,
+      "stale_rate": 1.0
+    },
+    "RemoteControl": {
+      "n": 17,
+      "stale": 17,
+      "stale_rate": 1.0
+    },
+    "Safe": {
+      "n": 6,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "SaltShaker": {
+      "n": 27,
+      "stale": 27,
+      "stale_rate": 1.0
+    },
+    "Shelf": {
+      "n": 29,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "SideTable": {
+      "n": 23,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Sink": {
+      "n": 60,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "SoapBottle": {
+      "n": 30,
+      "stale": 30,
+      "stale_rate": 1.0
+    },
+    "Sofa": {
+      "n": 36,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Spatula": {
+      "n": 23,
+      "stale": 23,
+      "stale_rate": 1.0
+    },
+    "Spoon": {
+      "n": 33,
+      "stale": 33,
+      "stale_rate": 1.0
+    },
+    "Statue": {
+      "n": 6,
+      "stale": 6,
+      "stale_rate": 1.0
+    },
+    "Stool": {
+      "n": 27,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "StoveBurner": {
+      "n": 132,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "StoveKnob": {
+      "n": 103,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "TennisRacket": {
+      "n": 6,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Toaster": {
+      "n": 8,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "Tomato": {
+      "n": 25,
+      "stale": 25,
+      "stale_rate": 1.0
+    },
+    "Window": {
+      "n": 23,
+      "stale": 0,
+      "stale_rate": 0.0
+    },
+    "WineBottle": {
+      "n": 9,
+      "stale": 9,
+      "stale_rate": 1.0
+    }
+  },
+  "feature_fields": [
+    "object_type",
+    "scene",
+    "memory_is_target",
+    "same_type_scene_total",
+    "same_type_nearby_count",
+    "memory_x",
+    "memory_y",
+    "memory_z"
+  ],
+  "label_field": "stale",
+  "leak_warning": "ground_distance_memory_to_true / true_position / true_object_id are label-derived; never use as inputs",
+  "source_lists": [
+    "fresh_small_disp/FloorPlan10_batch",
+    "fresh_small_disp/FloorPlan202_batch",
+    "fresh_small_disp/FloorPlan204_batch",
+    "fresh_small_disp/FloorPlan2_batch",
+    "fresh_small_disp/FloorPlan302_batch",
+    "fresh_small_disp/FloorPlan303_batch",
+    "fresh_small_disp/FloorPlan4_batch",
+    "fresh_small_disp/FloorPlan5_batch",
+    "fresh_small_disp/FloorPlan6_batch",
+    "fresh_small_disp/FloorPlan9_batch",
+    "holdout_v1/FloorPlan2_batch",
+    "holdout_v1/FloorPlan302_batch",
+    "holdout_v1/FloorPlan303_batch",
+    "holdout_v1/FloorPlan5_batch",
+    "holdout_v2/FloorPlan10_batch",
+    "holdout_v2/FloorPlan202_batch",
+    "holdout_v2/FloorPlan204_batch",
+    "holdout_v2/FloorPlan4_batch",
+    "holdout_v2/FloorPlan5_batch",
+    "holdout_v2/FloorPlan6_batch",
+    "original/FloorPlan1_batch",
+    "original/FloorPlan201_batch",
+    "original/FloorPlan3_batch"
+  ]
+}

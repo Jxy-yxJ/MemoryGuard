@@ -1,0 +1,387 @@
+{
+  "summary": {
+    "p0": {
+      "sessions": 30,
+      "sessions_with_pattern": 6,
+      "pattern_session_rate": 0.2,
+      "fn_events": 12,
+      "triggers": 0,
+      "recoveries": 0,
+      "success": 48,
+      "cases": 60
+    },
+    "p1": {
+      "sessions": 30,
+      "sessions_with_pattern": 8,
+      "pattern_session_rate": 0.267,
+      "fn_events": 0,
+      "triggers": 16,
+      "recoveries": 16,
+      "success": 60,
+      "cases": 60
+    },
+    "p1w": {
+      "sessions": 30,
+      "sessions_with_pattern": 12,
+      "pattern_session_rate": 0.4,
+      "fn_events": 24,
+      "triggers": 0,
+      "recoveries": 0,
+      "success": 36,
+      "cases": 60
+    }
+  },
+  "conditional_recovery": {
+    "table": {
+      "armed_recovered": 16,
+      "armed_not": 0,
+      "disarmed_recovered": 0,
+      "disarmed_not": 24
+    },
+    "fisher_one_sided_p": 0.0,
+    "note": "armed = p1 sessions with pattern; disarmed = p1w sessions with pattern; p0 shown as baseline reference"
+  },
+  "p0_reference": {
+    "sessions": 30,
+    "sessions_with_pattern": 6,
+    "pattern_session_rate": 0.2,
+    "fn_events": 12,
+    "triggers": 0,
+    "recoveries": 0,
+    "success": 48,
+    "cases": 60,
+    "per_session": [
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 1
+      },
+      {
+        "cases": 2,
+        "fn_events": 2,
+        "pattern_present": true,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 0,
+        "rep": 2
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 3
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 4
+      },
+      {
+        "cases": 2,
+        "fn_events": 2,
+        "pattern_present": true,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 0,
+        "rep": 5
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 6
+      },
+      {
+        "cases": 2,
+        "fn_events": 2,
+        "pattern_present": true,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 0,
+        "rep": 7
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 8
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 9
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 10
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 11
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 12
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 13
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 14
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 15
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 16
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 17
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 18
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 19
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 20
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 21
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 22
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 23
+      },
+      {
+        "cases": 2,
+        "fn_events": 2,
+        "pattern_present": true,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 0,
+        "rep": 24
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 25
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 26
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 27
+      },
+      {
+        "cases": 2,
+        "fn_events": 2,
+        "pattern_present": true,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 0,
+        "rep": 28
+      },
+      {
+        "cases": 2,
+        "fn_events": 0,
+        "pattern_present": false,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 2,
+        "rep": 29
+      },
+      {
+        "cases": 2,
+        "fn_events": 2,
+        "pattern_present": true,
+        "triggers": 0,
+        "recoveries": 0,
+        "confirmed_not_stale": 0,
+        "failed": 0,
+        "success": 0,
+        "rep": 30
+      }
+    ]
+  },
+  "boundary": "session-level stochasticity documented; conditional contrast suggestive (small n)"
+}
