@@ -112,15 +112,18 @@ held-out scenes, target classes, and seeds.
 
 *Right: a passive agent acting on stale memory arrives at the remembered location (red X) and finds
 nothing. Left: MemoryGuard verifies the memory, refreshes it, navigates to the object's new
-location (green circle), and picks it up. Rendered from real simulator frames; full-resolution
-clips are in [`videos/`](videos/).*
+location (green circle), and picks it up. Each side shows three synchronised views — the robot's
+camera, a third-person follow view, and a top-down map with the remembered location (red X), the
+true object location (green circle), and the agent's path. Full-resolution clips are in
+[`videos/`](videos/).*
 
 Phase 3 adds the reliability story as a paired demo: the
 [failure mode](videos/m2_reliability_Box_163_baseline.mp4) (single-view "fresh" verdict on a
 moved Box — no action, task fails) and the
 [recovery](videos/m2_reliability_Box_163_active.mp4) (second-pose re-observation flips the
-verdict to stale; memory refreshed; Box picked up). Both clips end with an on-map
-"Box in hand" marker when the pickup succeeds.
+verdict to stale; memory refreshed; Box picked up). Both clips use the same three synchronised
+views (robot camera, third-person follow, top-down map), hold each step for ~half a second so the
+turns are easy to follow, and end with an on-map "Box in hand" marker when the pickup succeeds.
 
 ---
 

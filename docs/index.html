@@ -103,7 +103,7 @@
     <div class="demo-media">
       <img src="assets/demo_comparison.gif" alt="Side-by-side: passive agent fails at the stale location; MemoryGuard verifies, refreshes, and picks up the object.">
     </div>
-    <p class="caption">Left: a passive agent acts on stale memory, arrives at the remembered location (red&nbsp;X), and finds nothing. Right: MemoryGuard verifies the memory, detects that it is stale, refreshes it, navigates to the object's new location (green&nbsp;circle), and picks it up. Rendered from real simulator frames; the top-down map shows the remembered location, the true object location, and the agent's path.</p>
+    <p class="caption">Left: a passive agent acts on stale memory, arrives at the remembered location (red&nbsp;X), and finds nothing. Right: MemoryGuard verifies the memory, detects that it is stale, refreshes it, navigates to the object's new location (green&nbsp;circle), and picks it up. Each side shows three synchronised views &mdash; the robot's camera, a third-person follow view, and a top-down map with the remembered location, the true object location, and the agent's path.</p>
     <h3>Full-resolution runs</h3>
     <video controls muted loop playsinline preload="metadata">
       <source src="assets/FloorPlan1_Apple_7_comparison.mp4" type="video/mp4">
@@ -120,7 +120,7 @@
     <video controls muted loop playsinline preload="metadata">
       <source src="assets/m2_reliability_Box_163_active.mp4" type="video/mp4">
     </video>
-    <p class="caption">Baseline (top) and recovery (bottom) on the same case (<code>FloorPlan202 / Box / seed 163</code>). In the pre-registered randomized replication (30 rounds &times; 3 arms, 90 sessions), the armed trigger recovered <b>16/16</b> observed pattern events vs <b>0/24</b> when disabled (Fisher exact p = 1.6e-11), with paired case success <b>60/60 vs 48/60</b> (McNemar p = 4.9e-4).</p>
+    <p class="caption">Baseline (top) and recovery (bottom) on the same case (<code>FloorPlan202 / Box / seed 163</code>), shown in three synchronised views (robot camera, third-person follow, top-down map) with a half-second hold per step so the turns are easy to follow. In the pre-registered randomized replication (30 rounds &times; 3 arms, 90 sessions), the armed trigger recovered <b>16/16</b> observed pattern events vs <b>0/24</b> when disabled (Fisher exact p = 1.6e-11), with paired case success <b>60/60 vs 48/60</b> (McNemar p = 4.9e-4).</p>
   </section>
 
   <section id="problem">
