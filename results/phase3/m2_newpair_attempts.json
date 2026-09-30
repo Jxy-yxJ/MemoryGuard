@@ -1,0 +1,62 @@
+{
+  "schema": "0514_m2_newpair_attempts.v1",
+  "date": "2026-09-30",
+  "interpretation": "Baseline elicitation attempts for the near-match verifier false-negative mode outside the original FP202/Box 163+191 pair: neither the historical Book pair (three stack configurations) nor independently screened new Box cases exhibited the mode; the signature's occurrence is case-specific.",
+  "book_attempt": {
+    "sessions": 72,
+    "case_instances": 144,
+    "fn_events": 0,
+    "detail": [
+      {
+        "dir": "0514_m2_newpair_book_screen36",
+        "label": "rich probe, fp16",
+        "sessions": 36,
+        "case_instances": 72,
+        "fn_events": 0
+      },
+      {
+        "dir": "0514_m2_newpair_book_screen_def",
+        "label": "default probe, fp16",
+        "sessions": 20,
+        "case_instances": 40,
+        "fn_events": 0
+      },
+      {
+        "dir": "0514_m2_newpair_book_screen_fp32",
+        "label": "rich probe, fp32",
+        "sessions": 16,
+        "case_instances": 32,
+        "fn_events": 0
+      }
+    ]
+  },
+  "box_pair_attempt": {
+    "sessions": 30,
+    "case_instances": 60,
+    "fn_events": 0,
+    "detail": [
+      {
+        "dir": "0514_m2_newpair_box2_screen30",
+        "label": "pair 205/224, rich probe, fp16",
+        "sessions": 30,
+        "case_instances": 60,
+        "fn_events": 0
+      }
+    ]
+  },
+  "box_multiseed_attempt": {
+    "sessions": 10,
+    "case_instances": 60,
+    "fn_events": 0,
+    "detail": [
+      {
+        "dir": "0514_m2_newpair_box2_multiseed",
+        "label": "six seeds, rich probe, fp16",
+        "sessions": 10,
+        "case_instances": 60,
+        "fn_events": 0
+      }
+    ]
+  },
+  "boundary": "Baseline (p0) sessions only; FN counts are oracle-stale-but-verdict-fresh rows; these attempts bound the occurrence of the near-match signature, they are not a prevalence estimate for the class or the simulator."
+}

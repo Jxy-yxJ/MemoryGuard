@@ -1,0 +1,123 @@
+{
+  "rows": 241,
+  "keys": 97,
+  "scenes": 14,
+  "classes": 13,
+  "roles": {
+    "allocation_stale_target": 97,
+    "allocation_easy_target": 144
+  },
+  "per_scene": {
+    "FloorPlan1": {
+      "stale": 8,
+      "easy": 8
+    },
+    "FloorPlan10": {
+      "stale": 10,
+      "easy": 19
+    },
+    "FloorPlan2": {
+      "stale": 5,
+      "easy": 5
+    },
+    "FloorPlan201": {
+      "stale": 4,
+      "easy": 4
+    },
+    "FloorPlan202": {
+      "stale": 6,
+      "easy": 6
+    },
+    "FloorPlan204": {
+      "stale": 7,
+      "easy": 7
+    },
+    "FloorPlan209": {
+      "stale": 6,
+      "easy": 11
+    },
+    "FloorPlan3": {
+      "stale": 2,
+      "easy": 2
+    },
+    "FloorPlan305": {
+      "stale": 12,
+      "easy": 20
+    },
+    "FloorPlan4": {
+      "stale": 8,
+      "easy": 16
+    },
+    "FloorPlan5": {
+      "stale": 6,
+      "easy": 6
+    },
+    "FloorPlan6": {
+      "stale": 9,
+      "easy": 16
+    },
+    "FloorPlan7": {
+      "stale": 4,
+      "easy": 4
+    },
+    "FloorPlan9": {
+      "stale": 10,
+      "easy": 20
+    }
+  },
+  "per_class": {
+    "Apple": {
+      "stale": 15,
+      "easy": 7
+    },
+    "Book": {
+      "stale": 1,
+      "easy": 7
+    },
+    "Box": {
+      "stale": 4,
+      "easy": 27
+    },
+    "CellPhone": {
+      "stale": 18,
+      "easy": 5
+    },
+    "Cup": {
+      "stale": 12,
+      "easy": 10
+    },
+    "Knife": {
+      "stale": 2,
+      "easy": 20
+    },
+    "Mug": {
+      "stale": 15,
+      "easy": 18
+    },
+    "Newspaper": {
+      "stale": 5,
+      "easy": 5
+    },
+    "Pencil": {
+      "stale": 2,
+      "easy": 5
+    },
+    "Potato": {
+      "stale": 6,
+      "easy": 15
+    },
+    "RemoteControl": {
+      "stale": 8,
+      "easy": 3
+    },
+    "SoapBottle": {
+      "stale": 8,
+      "easy": 12
+    },
+    "Tomato": {
+      "stale": 1,
+      "easy": 10
+    }
+  },
+  "boundary": "Screen-conditioned composition: every key contains both roles by construction; these counts describe the frozen set, not deployment prevalence."
+}

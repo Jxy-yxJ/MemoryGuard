@@ -1,0 +1,82 @@
+{
+  "rows": 241,
+  "keys": 97,
+  "evaluated_keys": 97,
+  "seed": 2026,
+  "deployed_ev": {
+    "auc": 0.6822,
+    "per_key_top1_accuracy": 0.7216,
+    "top1_wilson_ci95": [
+      0.6253,
+      0.8011
+    ]
+  },
+  "families": {
+    "logistic": {
+      "leave_scene_out_auc": 0.7614,
+      "per_key_top1_accuracy": 0.732,
+      "top1_wilson_ci95": [
+        0.6362,
+        0.81
+      ],
+      "top1_minus_ev": 0.0103,
+      "bootstrap_ci95_vs_ev": [
+        -0.0722,
+        0.0928
+      ]
+    },
+    "random_forest": {
+      "leave_scene_out_auc": 0.7785,
+      "per_key_top1_accuracy": 0.7216,
+      "top1_wilson_ci95": [
+        0.6253,
+        0.8011
+      ],
+      "top1_minus_ev": 0.0,
+      "bootstrap_ci95_vs_ev": [
+        -0.0825,
+        0.0825
+      ]
+    },
+    "gradient_boosting": {
+      "leave_scene_out_auc": 0.7572,
+      "per_key_top1_accuracy": 0.7216,
+      "top1_wilson_ci95": [
+        0.6253,
+        0.8011
+      ],
+      "top1_minus_ev": 0.0,
+      "bootstrap_ci95_vs_ev": [
+        -0.0928,
+        0.0825
+      ]
+    },
+    "pairwise_logistic": {
+      "leave_scene_out_auc": 0.7207,
+      "per_key_top1_accuracy": 0.6598,
+      "top1_wilson_ci95": [
+        0.561,
+        0.7464
+      ],
+      "top1_minus_ev": -0.0619,
+      "bootstrap_ci95_vs_ev": [
+        -0.1443,
+        0.0103
+      ]
+    },
+    "calibrated_gbm": {
+      "leave_scene_out_auc": 0.7614,
+      "per_key_top1_accuracy": 0.7113,
+      "top1_wilson_ci95": [
+        0.6145,
+        0.7921
+      ],
+      "top1_minus_ev": -0.0103,
+      "bootstrap_ci95_vs_ev": [
+        -0.1031,
+        0.0825
+      ]
+    }
+  },
+  "interpretation": "Under identical leave-one-scene-out folds, stronger static learners do not materially raise per-key top-1 selection over the deployed EV ranking; the tested static-signal family is near-saturated. This remains a family-level statement, not an impossibility result."
+}

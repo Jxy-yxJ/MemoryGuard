@@ -133,6 +133,7 @@ turns are easy to follow, and end with an on-map "Box in hand" marker when the p
 |---|---|---|
 | **Paired passive-vs-active challenge** | Pre-registered, geometry-screened AI2-THOR challenge (36 frozen cases / 32 evaluable pairs; corrected interaction protocol) | Active verify–update–act **29/32 (91%)** vs. live passive stale-memory **0/34**; McNemar exact two-sided **p = 3.7e-09** |
 | **Held-out replication** | Unseen scenes, target classes, and seeds (11-case pilot and 24-case v2) | Active **11/11** vs. passive **0/11** (p = 9.8e-04) and active **22/24** vs. passive **0/24** (p = 4.8e-07) |
+| **Stratified evaluation** | Below the challenge screen (47-case frozen stratum) and a screened-list re-run under one protocol | Below threshold: active **38/41** vs. passive **19/41** (p = 2.1e-05); screened re-run: **33/36** vs. **0/36** (p = 2.3e-10); repeat runs reproduce |
 | **Live closed-loop detector** | 30 controller-backed rows with live `InitialRandomSpawn`, no `TeleportObject` | **22/30** agreement with offline labels; 20/30 memories mutated; non-uniform expected verification value (mean 0.7287) |
 | **Stepwise task loop (no teleport shortcut)** | Fixed 6-case mixed challenge | Adaptive route-aware action budget lifts downstream `PickupObject` success from **2/6 → 6/6** |
 | **VLM diagnostic baseline** | Qwen3-VL-32B on raw before/after frames | Staleness detection **6/6**, correct update **3/6**; multi-round agent completes **0/6** full chains |
@@ -222,12 +223,20 @@ drops downstream success to the passive baseline.
   detection below matched-distance 0.05).
 - **Mechanism:** on a "fresh" verdict for a suspicious case, re-observe from up to two alternate
   poses and adopt the first stale re-verdict (default-off flag; zero false triggers observed).
-- **Pre-registered randomized replication (30 rounds x 3 arms, 90 sessions, zero failures):**
-  the armed trigger recovers **16/16** observed pattern events vs **0/24** with the trigger
-  disabled (Fisher exact **p = 1.6e-11**); paired case success **60/60 vs 48/60** (McNemar
-  **p = 4.9e-4**), falling to **36/60** in the disarmed ablation.
+- **Pre-registered randomized replication (30 rounds x 3 arms, 90 sessions, zero failures),
+  analyzed at the randomized-session level:** the armed trigger recovers every observed pattern
+  event, conditional on the pattern appearing — **8/8** pattern-present sessions vs **0/12**
+  disarmed (session-level Fisher exact **p < 1e-5**); paired case success **60/60 vs 48/60**
+  with the gain concentrated in **6 of 30** sessions (round-level paired randomization
+  **p = 0.032**, cluster bootstrap 95% CI [6.7, 36.7] points), falling to **36/60** in the
+  disarmed ablation.
 - **Class-agnostic variant:** a near-match trigger that uses no per-class calibration recovers
-  **10/10** events over 15 further rounds with a deliberately absent class-floor table.
+  **10/10** events over 15 further rounds with a deliberately absent class-floor table — when the
+  signature occurs.
+- **Occurrence boundary (honest negative):** baseline elicitation outside the original pair — 30
+  sessions on an independently screened new Box pair, 60 case-instances across six further Box
+  seeds, and 72 Book sessions across three stack configurations — produced **no further
+  occurrences** of the signature, so we do not claim it generalizes to new cases or classes.
 
 Artifacts: [`results/phase3/`](results/phase3/) (summaries + frozen schedules) ·
 Demos: [failure mode](videos/m2_reliability_Box_163_baseline.mp4) ·
@@ -242,14 +251,37 @@ Demos: [failure mode](videos/m2_reliability_Box_163_baseline.mp4) ·
 - **Selection:** on a frozen 97-key mixed set at one verification per case, the deployed
   expected-value ranking selects the stale target **72.2%** vs **61.9%** for a uniform order
   (McNemar p = 6.3e-3); a reliability-first ranking is harmful (**38.1%**).
-- **Information ceiling:** a learned ranker over all policy-visible signals reaches only
-  **73.2%** top-1, so the remaining selection headroom is information-limited.
+- **Static-signal saturation:** five model families over policy-visible signals (logistic,
+  random forest, gradient boosting, pairwise logistic, calibrated GBM) reach **0.66–0.73**
+  top-1 under identical leave-scene-out folds, none materially above the deployed **0.72**
+  (key-level bootstrap CIs include zero) — the remaining selection headroom is near-saturated
+  across the tested static families (not an impossibility result for all static policies).
 - **Budget scaling:** two verifications per case reach **94.8%** selection and **76.3%** success,
   within 3.1 points of the no-constraint ceiling (**79.4%**, which is interaction-limited).
 - **Observation limit:** targets are visible from the spawn pose after the change in only
   **2/30** keys (6.7%), so remote "glance-first" verification cannot carry the workload.
 
 Artifacts: [`results/phase3/`](results/phase3/).
+
+### 8. The advantage is not an artifact of the challenge screen (stratified evaluation)
+
+The screened challenge forces passive failure by construction (`d_passive >= 2.0 m`). Two
+additional frozen evaluations test what happens without that screen, both under the corrected
+honest-interaction protocol and one machine:
+
+- **Screened-list re-run (same protocol):** active **33/36** vs passive **0/36**, exact McNemar
+  **p = 2.3e-10**; the entire 36-case list is evaluable.
+- **Below-threshold stratum (47 frozen cases, `d_passive < 2.0 m`; 41 evaluable):** passive keeps
+  non-trivial success — **19/41 (46%)** — so the screen was what made it fail outright; yet the
+  active arm still wins **38/41 (93%)**, with **20 active-only vs 1 passive-only** discordant
+  pairs (exact McNemar **p = 2.1e-05**). Six active rows are detector false negatives (the same
+  mode as Section 6) and are not evaluable.
+- **Repeat runs** of both strata reproduce the tables (33/36 and 37/41), so the result is
+  session-level reproducible.
+
+![Displacement-stratified paired evaluation](figures/phase3/stratified_evaluation.png)
+
+Artifacts: [`results/phase3/`](results/phase3/) (`stratified_*.json`).
 
 ### Figures
 
@@ -329,7 +361,9 @@ claim:
   parts of the live pipeline; stepwise variants are labeled as such);
 - manipulation-benchmark performance or task success beyond the fixed challenges reported here;
 - persistent memory writeback or cross-platform (Habitat/Gibson) transfer;
-- active-over-passive superiority outside the frozen, geometry-screened case set.
+- active-over-passive superiority outside the frozen case universes (the stratified evaluation
+  extends the comparison below the displacement screen — 38/41 vs 19/41 — but remains
+  fixed-universe, single-machine, and session-level).
 
 Oracle simulator metadata is used **only** for case construction and offline evaluation — never as
 a policy input, ranking feature, or deployable detector.

@@ -1,0 +1,155 @@
+{
+  "design": "2 fixed Box cases x 30 randomized sessions per arm; inferential unit = session/round",
+  "seed": 20260929,
+  "monte_carlo_draws": 200000,
+  "arms": {
+    "p0": {
+      "sessions": 30,
+      "sessions_full_success": 24,
+      "cases": 60,
+      "success": 48,
+      "sessions_with_pattern": 6,
+      "fn_events": 12,
+      "triggers": 0,
+      "recoveries": 0,
+      "pattern_sessions_recovered": 0
+    },
+    "p1": {
+      "sessions": 30,
+      "sessions_full_success": 30,
+      "cases": 60,
+      "success": 60,
+      "sessions_with_pattern": 8,
+      "fn_events": 0,
+      "triggers": 16,
+      "recoveries": 16,
+      "pattern_sessions_recovered": 8
+    },
+    "p1w": {
+      "sessions": 30,
+      "sessions_full_success": 18,
+      "cases": 60,
+      "success": 36,
+      "sessions_with_pattern": 12,
+      "fn_events": 24,
+      "triggers": 0,
+      "recoveries": 0,
+      "pattern_sessions_recovered": 0
+    }
+  },
+  "p1_vs_p0": {
+    "rounds": 30,
+    "rounds_favoring_arm": 6,
+    "rounds_favoring_reference": 0,
+    "rounds_tied": 24,
+    "case_success_difference": 12,
+    "case_success_difference_pp": 20.0,
+    "sign_test_exact_two_sided_p": 0.03125,
+    "sign_flip_permutation_two_sided_p": 0.03211,
+    "cluster_bootstrap_ci95_pp": [
+      6.67,
+      36.67
+    ],
+    "per_round_case_success_difference": [
+      0,
+      2,
+      0,
+      0,
+      2,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      2,
+      0,
+      2
+    ]
+  },
+  "p1_vs_p1w": {
+    "rounds": 30,
+    "rounds_favoring_arm": 12,
+    "rounds_favoring_reference": 0,
+    "rounds_tied": 18,
+    "case_success_difference": 24,
+    "case_success_difference_pp": 40.0,
+    "sign_test_exact_two_sided_p": 0.00049,
+    "sign_flip_permutation_two_sided_p": 0.00059,
+    "cluster_bootstrap_ci95_pp": [
+      23.33,
+      56.67
+    ],
+    "per_round_case_success_difference": [
+      0,
+      0,
+      0,
+      2,
+      0,
+      2,
+      2,
+      2,
+      0,
+      0,
+      2,
+      2,
+      0,
+      0,
+      2,
+      2,
+      0,
+      2,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0
+    ]
+  },
+  "conditional_recovery": {
+    "session_level": {
+      "armed_recovered": 8,
+      "armed_pattern_sessions": 8,
+      "disarmed_recovered": 0,
+      "disarmed_pattern_sessions": 12,
+      "fisher_one_sided_p": "7.94e-06"
+    },
+    "event_level_descriptive": {
+      "armed_recovered": 16,
+      "armed_events": 16,
+      "disarmed_recovered": 0,
+      "disarmed_events": 24,
+      "note": "events cluster within sessions (16 across 8 sessions; 24 across 12); descriptive only"
+    }
+  },
+  "superseded_row_level": {
+    "discordant_b_arm_success_only": 12,
+    "discordant_c_reference_success_only": 0,
+    "exact_mcnemar_two_sided_p": 0.000488,
+    "note": "treats 60 repeated rows as independent case instances; kept for continuity with the original analysis"
+  },
+  "boundary": "Conditional mechanism evidence on two fixed Box cases within AI2-THOR; session is the randomized and exchangeable unit; do not read as population-level verifier reliability or end-to-end efficacy beyond the frozen challenge."
+}

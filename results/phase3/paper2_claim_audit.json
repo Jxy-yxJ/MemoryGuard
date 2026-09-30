@@ -1,5 +1,5 @@
 {
-  "checks": 60,
+  "checks": 104,
   "failures": [],
   "status": "PASS",
   "detail": [
@@ -204,9 +204,83 @@
       "actual": true
     },
     {
-      "claim": "conditional Fisher = 1.59e-11",
-      "stated": 1.6e-11,
-      "actual": 1.6e-11
+      "claim": "event-level conditional recovery 16/16 vs 0/24",
+      "stated": true,
+      "actual": true
+    },
+    {
+      "claim": "session-level conditional recovery 8/8",
+      "stated": [
+        8,
+        8
+      ],
+      "actual": [
+        8,
+        8
+      ]
+    },
+    {
+      "claim": "session-level conditional recovery 0/12",
+      "stated": [
+        0,
+        12
+      ],
+      "actual": [
+        0,
+        12
+      ]
+    },
+    {
+      "claim": "session-level Fisher = 7.94e-6",
+      "stated": 7.94e-06,
+      "actual": 7.94e-06
+    },
+    {
+      "claim": "armed-baseline rounds favoring armed = 6",
+      "stated": 6,
+      "actual": 6
+    },
+    {
+      "claim": "armed-baseline rounds favoring baseline = 0",
+      "stated": 0,
+      "actual": 0
+    },
+    {
+      "claim": "armed-baseline sign-flip p = 0.032",
+      "stated": 0.032,
+      "actual": 0.03211
+    },
+    {
+      "claim": "armed-baseline CI = [6.67, 36.67]",
+      "stated": [
+        6.67,
+        36.67
+      ],
+      "actual": [
+        6.67,
+        36.67
+      ]
+    },
+    {
+      "claim": "armed-disarmed sign test = 4.9e-4",
+      "stated": 0.00049,
+      "actual": 0.00049
+    },
+    {
+      "claim": "armed-disarmed sign-flip p = 5.9e-4",
+      "stated": 0.00059,
+      "actual": 0.00059
+    },
+    {
+      "claim": "armed-disarmed CI = [23.33, 56.67]",
+      "stated": [
+        23.33,
+        56.67
+      ],
+      "actual": [
+        23.33,
+        56.67
+      ]
     },
     {
       "claim": "signature FN n = 30",
@@ -322,6 +396,176 @@
       "claim": "visible fraction = 0.0667",
       "stated": 0.0667,
       "actual": 0.0667
+    },
+    {
+      "claim": "fresh stratum evaluable = 41",
+      "stated": 41,
+      "actual": 41
+    },
+    {
+      "claim": "fresh stratum active = 38",
+      "stated": 38,
+      "actual": 38
+    },
+    {
+      "claim": "fresh stratum passive = 19",
+      "stated": 19,
+      "actual": 19
+    },
+    {
+      "claim": "fresh stratum active-only = 20",
+      "stated": 20,
+      "actual": 20
+    },
+    {
+      "claim": "fresh stratum passive-only = 1",
+      "stated": 1,
+      "actual": 1
+    },
+    {
+      "claim": "fresh stratum McNemar = 2.098e-05",
+      "stated": 2.098e-05,
+      "actual": 2.098e-05
+    },
+    {
+      "claim": "fresh stratum detector-FN rows = 6",
+      "stated": 6,
+      "actual": 6
+    },
+    {
+      "claim": "stale re-run evaluable = 36",
+      "stated": 36,
+      "actual": 36
+    },
+    {
+      "claim": "stale re-run active = 33",
+      "stated": 33,
+      "actual": 33
+    },
+    {
+      "claim": "stale re-run passive = 0",
+      "stated": 0,
+      "actual": 0
+    },
+    {
+      "claim": "stale re-run McNemar = 2.328e-10",
+      "stated": 2.328e-10,
+      "actual": 2.328e-10
+    },
+    {
+      "claim": "Book elicitation sessions = 72",
+      "stated": 72,
+      "actual": 72
+    },
+    {
+      "claim": "Book elicitation FN = 0",
+      "stated": 0,
+      "actual": 0
+    },
+    {
+      "claim": "new Box pair elicitation sessions = 30",
+      "stated": 30,
+      "actual": 30
+    },
+    {
+      "claim": "new Box pair elicitation FN = 0",
+      "stated": 0,
+      "actual": 0
+    },
+    {
+      "claim": "Box multiseed case-instances = 60",
+      "stated": 60,
+      "actual": 60
+    },
+    {
+      "claim": "Box multiseed FN = 0",
+      "stated": 0,
+      "actual": 0
+    },
+    {
+      "claim": "fresh repeat active = 37",
+      "stated": 37,
+      "actual": 37
+    },
+    {
+      "claim": "fresh repeat passive = 19",
+      "stated": 19,
+      "actual": 19
+    },
+    {
+      "claim": "fresh repeat McNemar = 4.005e-05",
+      "stated": 4.005e-05,
+      "actual": 4.005e-05
+    },
+    {
+      "claim": "stale repeat active = 33",
+      "stated": 33,
+      "actual": 33
+    },
+    {
+      "claim": "stale repeat passive = 0",
+      "stated": 0,
+      "actual": 0
+    },
+    {
+      "claim": "model families: logistic top1 = 0.732",
+      "stated": 0.732,
+      "actual": 0.732
+    },
+    {
+      "claim": "model families: RF top1 = 0.7216",
+      "stated": 0.7216,
+      "actual": 0.7216
+    },
+    {
+      "claim": "model families: GBM top1 = 0.7216",
+      "stated": 0.7216,
+      "actual": 0.7216
+    },
+    {
+      "claim": "model families: pairwise top1 = 0.6598",
+      "stated": 0.6598,
+      "actual": 0.6598
+    },
+    {
+      "claim": "model families: calibrated GBM top1 = 0.7113",
+      "stated": 0.7113,
+      "actual": 0.7113
+    },
+    {
+      "claim": "model families: RF AUC = 0.7785",
+      "stated": 0.7785,
+      "actual": 0.7785
+    },
+    {
+      "claim": "allocation composition rows = 241",
+      "stated": 241,
+      "actual": 241
+    },
+    {
+      "claim": "allocation composition keys = 97",
+      "stated": 97,
+      "actual": 97
+    },
+    {
+      "claim": "allocation composition scenes = 14",
+      "stated": 14,
+      "actual": 14
+    },
+    {
+      "claim": "allocation composition classes = 13",
+      "stated": 13,
+      "actual": 13
+    },
+    {
+      "claim": "allocation composition stale = 97",
+      "stated": 97,
+      "actual": 97
+    },
+    {
+      "claim": "allocation composition easy = 144",
+      "stated": 144,
+      "actual": 144
     }
   ]
 }

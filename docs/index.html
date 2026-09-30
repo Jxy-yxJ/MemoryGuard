@@ -6,7 +6,7 @@
 <title>MemoryGuard — Bounded Active Memory Maintenance for Embodied Agents</title>
 <meta name="description" content="MemoryGuard detects stale object memories under environmental change, verifies them with perception, refreshes the stored state, and acts — 29/32 vs 0/34 on a pre-registered AI2-THOR challenge, replicated on unseen scenes, targets, and seeds.">
 <meta property="og:title" content="MemoryGuard — Bounded Active Memory Maintenance">
-<meta property="og:description" content="Verify → update → act for stale object memory in embodied agents. Pre-registered paired evaluation: 29/32 vs 0/34; held-out replication 22/24 vs 0/24.">
+<meta property="og:description" content="Verify → update → act for stale object memory in embodied agents. Pre-registered paired evaluation: 29/32 vs 0/34; held-out replication 22/24 vs 0/24; stratified below-screen evaluation 38/41 vs 19/41.">
 <meta property="og:image" content="assets/fig_0514_mixed_challenge.png">
 <meta property="og:type" content="website">
 <style>
@@ -120,7 +120,7 @@
     <video controls muted loop playsinline preload="metadata">
       <source src="assets/m2_reliability_Box_163_active.mp4" type="video/mp4">
     </video>
-    <p class="caption">Baseline (top) and recovery (bottom) on the same case (<code>FloorPlan202 / Box / seed 163</code>), shown in three synchronised views (robot camera, third-person follow, top-down map) with a half-second hold per step so the turns are easy to follow. In the pre-registered randomized replication (30 rounds &times; 3 arms, 90 sessions), the armed trigger recovered <b>16/16</b> observed pattern events vs <b>0/24</b> when disabled (Fisher exact p = 1.6e-11), with paired case success <b>60/60 vs 48/60</b> (McNemar p = 4.9e-4).</p>
+    <p class="caption">Baseline (top) and recovery (bottom) on the same case (<code>FloorPlan202 / Box / seed 163</code>), shown in three synchronised views (robot camera, third-person follow, top-down map) with a half-second hold per step so the turns are easy to follow. In the pre-registered randomized replication (30 rounds &times; 3 arms, 90 sessions), analyzed at the randomized-session level, the armed trigger recovered every observed pattern event &mdash; <b>8/8</b> pattern-present sessions vs <b>0/12</b> when disarmed (session-level Fisher exact p &lt; 1e-5) &mdash; with paired case success <b>60/60 vs 48/60</b> and the gain concentrated in 6 of 30 sessions (round-level paired randomization p = 0.032).</p>
   </section>
 
   <section id="problem">
@@ -187,21 +187,26 @@
 
     <h3>Phase 3: reliability-aware maintenance under bounded budgets</h3>
     <div class="kpis">
-      <div class="kpi"><b>16/16</b><small>pattern events recovered by the reliability trigger vs. 0/24 disabled (Fisher exact p = 1.6e-11)</small></div>
-      <div class="kpi"><b>60/60 vs 48/60</b><small>paired case success (armed vs. baseline), exact McNemar p = 4.9e-4</small></div>
+      <div class="kpi"><b>8/8 vs 0/12</b><small>pattern-present sessions recovered by the reliability trigger vs. disarmed (session-level Fisher exact p &lt; 1e-5)</small></div>
+      <div class="kpi"><b>38/41 vs 19/41</b><small>active vs. passive task success below the challenge screen (frozen 47-case stratum), exact McNemar p = 2.1e-05</small></div>
+      <div class="kpi"><b>33/36 vs 0/36</b><small>screened-list re-run under one protocol, exact McNemar p = 2.3e-10</small></div>
       <div class="kpi"><b>72.2% vs 61.9%</b><small>stale-target selection, deployed EV vs. uniform, at one verification per case (p = 6.3e-3)</small></div>
     </div>
     <ul class="clean">
       <li><b>Diagnosis:</b> on 2,281 decision-point records, staleness is near-deterministic by object category (static 0.00 vs. movable 0.88&ndash;1.00; type-only CV AUC 0.996) &mdash; so P(stale) calibration is saturated and the deployment-relevant uncertainty is the verifier.</li>
-      <li><b>Verdicts:</b> verifier false negatives are confident "fresh" verdicts with a near-remembered detection while the target is invisible; re-observation repairs them (above), including a class-agnostic near-match variant (10/10 events, no per-class calibration).</li>
-      <li><b>Selection:</b> the deployed ranking beats a uniform order at a binding budget; a learned ranker over all policy-visible signals reaches only 73.2% (information-limited).</li>
+      <li><b>Verdicts:</b> verifier false negatives are confident "fresh" verdicts with a near-remembered detection while the target is invisible; re-observation repairs them (above), including a class-agnostic near-match variant (10/10 events, no per-class calibration, when the signature occurs). A boundary check shows the signature's <i>occurrence</i> is case-specific: no further occurrences appeared in 30 sessions on an independently screened new Box pair, 60 case-instances across six further Box seeds, or 72 Book sessions across three stack configurations.</li>
+      <li><b>Selection:</b> the deployed ranking beats a uniform order at a binding budget; five static model families over policy-visible signals reach 0.66&ndash;0.73 top-1 (none materially above the deployed 0.72; bootstrap CIs include zero) &mdash; near-saturated across tested families.</li>
       <li><b>Budget &amp; limits:</b> two verifications per case reach 94.8% selection / 76.3% success, within 3.1 points of the 79.4% no-constraint ceiling (interaction-limited); remote verification is geometry-limited (target visible from spawn in only 6.7% of keys).</li>
     </ul>
     <figure>
       <img src="assets/fig_phase3_verifier_reliability.png" alt="Left: matched-distance signature separating verifier false negatives from correct verdicts. Right: per-arm case success with Wilson intervals and recovered counts.">
       <figcaption>Phase 3 verdict study: a single matched-distance signature separates false negatives from correct verdicts (left); the randomized replication quantifies the intervention (right).</figcaption>
     </figure>
-    <p class="caption">Machine-readable summaries and frozen schedules: <a href="https://github.com/Jxy-yxJ/MemoryGuard/tree/main/results/phase3">results/phase3/</a>. All numbers are generated by pre-registered runs and pass a 60-check artifact audit (0 mismatches).</p>
+    <figure>
+      <img src="assets/fig_phase3_stratified.png" alt="Grouped bars: active vs passive PickupObject success on the screened stratum (≥2 m) and the below-threshold stratum (<2 m), run 1 and repeat, with Wilson 95% intervals and exact McNemar p-values.">
+      <figcaption>Stratified evaluation: the displacement screen was what made passive fail outright &mdash; below threshold, passive keeps 46% success, yet the active advantage persists (38/41 vs. 19/41, p = 2.1e-05) and both strata reproduce on a repeat run.</figcaption>
+    </figure>
+    <p class="caption">Machine-readable summaries and frozen schedules: <a href="https://github.com/Jxy-yxJ/MemoryGuard/tree/main/results/phase3">results/phase3/</a>. All numbers are generated by pre-registered runs and pass a 104-check artifact audit (0 mismatches).</p>
   </section>
 
   <section id="protocol">

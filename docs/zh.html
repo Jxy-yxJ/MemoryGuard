@@ -6,7 +6,7 @@
 <title>MemoryGuard — 面向长程具身智能体的有界主动记忆维护</title>
 <meta name="description" content="MemoryGuard 在环境变化后检测陈旧的物体位置记忆，用感知核验、刷新记忆并继续执行任务——预注册挑战 29/32 对 0/34，并在未见场景/目标/种子上完成复现。">
 <meta property="og:title" content="MemoryGuard — 有界主动记忆维护">
-<meta property="og:description" content="具身智能体的 verify → update → act 记忆维护闭环。预注册配对实验 29/32 对 0/34；held-out 复现 22/24 对 0/24。">
+<meta property="og:description" content="具身智能体的 verify → update → act 记忆维护闭环。预注册配对实验 29/32 对 0/34；held-out 复现 22/24 对 0/24；筛选之下分层评估 38/41 对 19/41。">
 <meta property="og:image" content="assets/fig_0514_mixed_challenge.png">
 <meta property="og:type" content="website">
 <style>
@@ -119,7 +119,7 @@
     <video controls muted loop playsinline preload="metadata">
       <source src="assets/m2_reliability_Box_163_active.mp4" type="video/mp4">
     </video>
-    <p class="caption">同一案例（<code>FloorPlan202 / Box / seed 163</code>）的基线（上）与恢复（下），均为三个同步视角（机器人相机、第三人称跟随、俯视图），每步停留约半秒以便看清。预注册随机化复现（30 轮 × 3 臂、90 会话）中，武装触发恢复 <b>16/16</b> 个模式事件，关闭时为 <b>0/24</b>（Fisher 精确 p = 1.6e-11）；配对案例成功率 <b>60/60 vs 48/60</b>（McNemar p = 4.9e-4）。</p>
+    <p class="caption">同一案例（<code>FloorPlan202 / Box / seed 163</code>）的基线（上）与恢复（下），均为三个同步视角（机器人相机、第三人称跟随、俯视图），每步停留约半秒以便看清。预注册随机化复现（30 轮 × 3 臂、90 会话）按会话层级分析：武装触发在模式出现时恢复全部观测事件——<b>8/8</b> 个含模式会话对 <b>0/12</b> 关闭臂（会话级 Fisher 精确 p &lt; 1e-5）；配对案例成功率 <b>60/60 vs 48/60</b>，增益集中在 30 轮中的 6 轮（轮级配对随机化 p = 0.032）。</p>
   </section>
 
   <section id="problem">
@@ -186,21 +186,26 @@
 
     <h3>Phase 3：有界预算下的可靠性感知维护</h3>
     <div class="kpis">
-      <div class="kpi"><b>16/16</b><small>可靠性触发恢复的模式事件数（关闭为 0/24），Fisher 精确 p = 1.6e-11</small></div>
-      <div class="kpi"><b>60/60 vs 48/60</b><small>配对案例成功率（武装 vs 基线），McNemar 精确 p = 4.9e-4</small></div>
+      <div class="kpi"><b>8/8 vs 0/12</b><small>含模式会话中可靠性触发的恢复数（对照关闭臂），会话级 Fisher 精确 p &lt; 1e-5</small></div>
+      <div class="kpi"><b>38/41 vs 19/41</b><small>挑战筛选之下的主动 vs 被动任务成功率（冻结 47 例层），McNemar 精确 p = 2.1e-05</small></div>
+      <div class="kpi"><b>33/36 vs 0/36</b><small>同协议筛选列表重跑，McNemar 精确 p = 2.3e-10</small></div>
       <div class="kpi"><b>72.2% vs 61.9%</b><small>每案例一次验证预算下，部署 EV 与均匀顺序的陈旧目标选择率（p = 6.3e-3）</small></div>
     </div>
     <ul class="clean">
       <li><b>诊断：</b>2,281 条决策点记录显示陈旧性几乎由类别决定（静态 0.00 vs 可移动 0.88–1.00；仅类别 CV AUC 0.996）——P(stale) 校准饱和，真正的不确定性在验证器。</li>
-      <li><b>判定：</b>验证器假阴性表现为目标不可见时的自信 "fresh" + 近记忆位置检测；换位姿复验可修复（见上），并给出无需按类校准的 near-match 变体（10/10）。</li>
-      <li><b>选择：</b>绑定预算下部署排序优于均匀；使用全部策略可见信号的学习排序 top-1 仅 73.2%（信息受限）。</li>
+      <li><b>判定：</b>验证器假阴性表现为目标不可见时的自信 "fresh" + 近记忆位置检测；换位姿复验可修复（见上），并给出无需按类校准的 near-match 变体（10/10，前提是该签名出现）。边界检查显示签名的<i>出现</i>是案例特异的：独立筛选的新 Box 对 30 个会话、另外 6 个 Box 种子 60 个案例实例、以及 3 种机制配置下 72 个 Book 会话均未再出现该签名。</li>
+      <li><b>选择：</b>绑定预算下部署排序优于均匀；五类静态模型（logistic/RF/GBM/成对 logistic/校准 GBM）的 top-1 为 0.66–0.73，均未实质超过部署的 0.72（自助 CI 含 0）——在所测模型族下近饱和。</li>
       <li><b>预算与极限：</b>每案例两次验证达到 94.8% 选择 / 76.3% 成功，距 79.4% 无约束天花板 3.1 个百分点（受交互限制）；远程验证受几何限制（出生点可见率仅 6.7%）。</li>
     </ul>
     <figure>
       <img src="assets/fig_phase3_verifier_reliability.png" alt="左：区分假阴性与正确判定的 matched-distance 签名；右：各臂成功率与恢复计数。">
       <figcaption>Phase 3 判定研究：单一 matched-distance 签名即可分离假阴性与正确判定（左）；随机化复现量化了干预效果（右）。</figcaption>
     </figure>
-    <p class="caption">机器可读摘要与冻结计划：<a href="https://github.com/Jxy-yxJ/MemoryGuard/tree/main/results/phase3">results/phase3/</a>。全部数字由预注册运行生成，并通过 60 项工件审计（0 不一致）。</p>
+    <figure>
+      <img src="assets/fig_phase3_stratified.png" alt="分组柱状图：筛选层（≥2 m）与筛选之下层（<2 m）的主动/被动 PickupObject 成功率（首轮与重复），含 Wilson 95% 区间与精确 McNemar p 值。">
+      <figcaption>分层评估：筛选才是让被动归零的原因——筛选之下被动仍有 46% 成功率，但主动优势依旧（38/41 对 19/41，p = 2.1e-05），且两个分层在重复运行中均可复现。</figcaption>
+    </figure>
+    <p class="caption">机器可读摘要与冻结计划：<a href="https://github.com/Jxy-yxJ/MemoryGuard/tree/main/results/phase3">results/phase3/</a>。全部数字由预注册运行生成，并通过 104 项工件审计（0 不一致）。</p>
   </section>
 
   <section id="protocol">
