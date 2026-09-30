@@ -1,13 +1,24 @@
 [English](README.md) | **简体中文**
 
+<div align="center">
+
 # MemoryGuard
 
-**面向长程具身智能体的有界主动记忆维护。**
+**面向长程具身智能体的有界主动记忆维护**
 
 [![tests](https://github.com/Jxy-yxJ/MemoryGuard/actions/workflows/tests.yml/badge.svg)](https://github.com/Jxy-yxJ/MemoryGuard/actions/workflows/tests.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![python](https://img.shields.io/badge/python-3.11-3776ab.svg)](requirements.txt)
 
-*江鑫宇（[@Jxy-yxJ](https://github.com/Jxy-yxJ)） — [项目主页](https://jxy-yxj.github.io/MemoryGuard/zh.html) · [代码仓库](https://github.com/Jxy-yxJ/MemoryGuard)*
+<img src="figures/hero_three_views.png" width="92%" alt="MemoryGuard 在 AI2-THOR 中：机器人相机、第三人称跟随视角、俯视图。红色 X 是记忆中的（陈旧）位置，绿色圆圈是物体真实位置；机器人核验、刷新记忆并抓起物体。">
+
+<sub><b>真实仿真帧</b>（FloorPlan5 / Knife / seed 163）：机器人相机 · 第三人称跟随 · 俯视图（红 X = 记忆中的陈旧位置，绿圈 = 真实位置）。完整配对演示见下方。</sub>
+
+[项目主页](https://jxy-yxj.github.io/MemoryGuard/zh.html) · [核心结果](#核心结果) · [演示视频](#演示视频) · [复现](#复现) · [English](README.md)
+
+</div>
+
+江鑫宇（[@Jxy-yxJ](https://github.com/Jxy-yxJ)） · [代码仓库](https://github.com/Jxy-yxJ/MemoryGuard)
 
 
 MemoryGuard 研究长程具身记忆中的一个具体失效模式：环境变化后，记忆中某个物体的位置会悄悄变*陈旧*，
@@ -17,13 +28,7 @@ MemoryGuard 研究长程具身记忆中的一个具体失效模式：环境变�
 
 整体是一个简单的三阶段机制：
 
-```
-        核验              刷新              行动
-记忆 ────────► 检测器 ────────► 更新 ────────► 下游任务
-   ▲            (仅当             陈旧          (抓取 / 打开)
-   │         期望价值 >                          
-   └─────────── 预算) ◄────────── 有界重访预算
-```
+![有界的核验 → 更新 → 行动环：用接地检测器核验、刷新陈旧记忆、再执行下游动作；重访由有界预算封顶。](figures/loop.png)
 
 核验阶段是**检测器无关**的：任何陈旧信号都可接入（回放中的 oracle 元数据代理、实时运行中的
 Grounded-SAM2 检测器，或视觉语言模型）。一个关键发现是：可靠的陈旧*检测*不等于可靠的记忆*维护*——

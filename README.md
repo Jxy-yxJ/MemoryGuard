@@ -1,13 +1,24 @@
 **English** | [简体中文](README.zh-CN.md)
 
+<div align="center">
+
 # MemoryGuard
 
-**Bounded active memory maintenance for long-horizon embodied agents.**
+**Bounded active memory maintenance for long-horizon embodied agents**
 
 [![tests](https://github.com/Jxy-yxJ/MemoryGuard/actions/workflows/tests.yml/badge.svg)](https://github.com/Jxy-yxJ/MemoryGuard/actions/workflows/tests.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![python](https://img.shields.io/badge/python-3.11-3776ab.svg)](requirements.txt)
 
-*Xinyu Jiang ([@Jxy-yxJ](https://github.com/Jxy-yxJ)) — [Project page](https://jxy-yxj.github.io/MemoryGuard/) · [Code](https://github.com/Jxy-yxJ/MemoryGuard)*
+<img src="figures/hero_three_views.png" width="92%" alt="MemoryGuard in AI2-THOR: robot camera, third-person follow view, and top-down map. The red X marks the remembered (stale) location; the green circle marks where the object actually is; the robot verifies, refreshes the memory, and picks the object up.">
+
+<sub><b>Real simulator frames</b> (FloorPlan5 / Knife / seed 163): robot camera · third-person follow · top-down map with the remembered (red X) and true (green) locations. The full paired demo is below.</sub>
+
+[Project page](https://jxy-yxj.github.io/MemoryGuard/) · [Results](#results) · [Demo](#demo) · [Reproduce](#reproducing) · [简体中文](README.zh-CN.md)
+
+</div>
+
+Xinyu Jiang ([@Jxy-yxJ](https://github.com/Jxy-yxJ)) · [Code](https://github.com/Jxy-yxJ/MemoryGuard)
 
 
 MemoryGuard studies a concrete failure mode of long-horizon embodied memory: a remembered
@@ -20,13 +31,7 @@ the downstream action.
 
 The loop is a simple three-stage mechanism:
 
-```
-        verify            update             act
-memory ────────► detector ────────► refresh ────────► downstream task
-   ▲               (only if           stale           (pickup / open)
-   │            expected value >                            
-   └─────────────── budget) ◄────────── bounded revisit budget
-```
+![The bounded verify → update → act loop: verify with a grounded detector, refresh stale memory, then act; repeat revisits are capped by a bounded budget.](figures/loop.png)
 
 The verification stage is **detector-agnostic**: any staleness signal (an oracle-metadata proxy
 in replay, a Grounded-SAM2 detector in live runs, or a vision-language model) can be plugged in.
