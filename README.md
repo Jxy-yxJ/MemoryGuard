@@ -10,9 +10,9 @@
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![python](https://img.shields.io/badge/python-3.11-3776ab.svg)](requirements.txt)
 
-<img src="figures/hero_three_views.png" width="92%" alt="MemoryGuard in AI2-THOR: robot camera, third-person follow view, and top-down map. The red X marks the remembered (stale) location; the green circle marks where the object actually is; the robot verifies, refreshes the memory, and picks the object up.">
+<img src="figures/hero_four_views.png" width="92%" alt="MemoryGuard in AI2-THOR: robot camera, third-person follow view, fixed room camera, and top-down map. The red X marks the remembered (stale) location; the green circle marks where the object actually is; the robot verifies, refreshes the memory, and picks the object up.">
 
-<sub><b>Real simulator frames</b> (FloorPlan5 / Knife / seed 163): robot camera · third-person follow · top-down map with the remembered (red X) and true (green) locations. The full paired demo is below.</sub>
+<sub><b>Real simulator frames</b> (FloorPlan5 / Knife / seed 163): robot camera · third-person follow · fixed room camera · top-down map with the remembered (red X) and true (green) locations. The full paired demo is below.</sub>
 
 [Project page](https://jxy-yxj.github.io/MemoryGuard/) · [Results](#results) · [Demo](#demo) · [Reproduce](#reproducing) · [简体中文](README.zh-CN.md)
 
@@ -115,20 +115,35 @@ held-out scenes, target classes, and seeds.
 
 ![MemoryGuard vs passive baseline: side-by-side](videos/demo_comparison.gif)
 
-*Right: a passive agent acting on stale memory arrives at the remembered location (red X) and finds
-nothing. Left: MemoryGuard verifies the memory, refreshes it, navigates to the object's new
-location (green circle), and picks it up. Each side shows three synchronised views — the robot's
-camera, a third-person follow view, and a top-down map with the remembered location (red X), the
-true object location (green circle), and the agent's path. Full-resolution clips are in
-[`videos/`](videos/).*
+*Top: MemoryGuard verifies the memory, detects that it is stale, refreshes it, navigates to the
+object's new location (green circle), and picks it up. Bottom: a passive agent acting on stale
+memory arrives at the remembered location (red X) and finds nothing. Each side shows four
+synchronised views — the robot's camera, a third-person follow view, a fixed room camera, and a
+top-down map with the remembered location (red X), the true object location (green circle), and the
+agent's path — plus a loop-stage progress bar and a verifier-decision card at the moment of
+verification. Full-resolution clips are in [`videos/`](videos/).*
 
 Phase 3 adds the reliability story as a paired demo: the
 [failure mode](videos/m2_reliability_Box_163_baseline.mp4) (single-view "fresh" verdict on a
 moved Box — no action, task fails) and the
 [recovery](videos/m2_reliability_Box_163_active.mp4) (second-pose re-observation flips the
-verdict to stale; memory refreshed; Box picked up). Both clips use the same three synchronised
-views (robot camera, third-person follow, top-down map), hold each step for ~half a second so the
+verdict to stale; memory refreshed; Box picked up). Both clips use the same four synchronised
+views (robot camera, third-person follow, fixed room camera, top-down map), hold each step for ~half a second so the
 turns are easy to follow, and end with an on-map "Box in hand" marker when the pickup succeeds.
+
+<p align="center"><b>More clips</b> — poster frames link to the MP4s (four synchronised views, loop-stage bar, and decision card):</p>
+<p align="center">
+  <a href="videos/FloorPlan1_Apple_7_active.mp4"><img src="videos/posters/apple_active.jpg" width="49%" alt="Active run: verify, refresh, and pick up the Apple"></a>
+  <a href="videos/FloorPlan1_Apple_7_passive.mp4"><img src="videos/posters/apple_passive.jpg" width="49%" alt="Passive run: acts on stale memory and fails"></a>
+</p>
+<p align="center">
+  <a href="videos/FloorPlan5_Knife_163_active.mp4"><img src="videos/posters/knife_active.jpg" width="49%" alt="Shelf target picked up with the bounded approach fallback"></a>
+  <a href="videos/FloorPlan6_Tomato_139_active.mp4"><img src="videos/posters/tomato_active.jpg" width="49%" alt="Tomato case, active run"></a>
+</p>
+<p align="center">
+  <a href="videos/m2_reliability_Box_163_active.mp4"><img src="videos/posters/box163_active.jpg" width="49%" alt="Re-observation flips the verdict; Box picked up"></a>
+  <a href="videos/m2_reliability_Box_163_baseline.mp4"><img src="videos/posters/box163_baseline.jpg" width="49%" alt="Single-view fresh verdict keeps the stale memory"></a>
+</p>
 
 ---
 

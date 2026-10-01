@@ -101,9 +101,9 @@
   <section id="demo">
     <h2>Demo: passive failure vs. active maintenance</h2>
     <div class="demo-media">
-      <img src="assets/demo_comparison.gif" alt="Side-by-side: passive agent fails at the stale location; MemoryGuard verifies, refreshes, and picks up the object.">
+      <img src="assets/demo_comparison.gif" alt="Stacked comparison: MemoryGuard verifies, refreshes, and picks up the object; a passive agent fails at the stale location.">
     </div>
-    <p class="caption">Left: a passive agent acts on stale memory, arrives at the remembered location (red&nbsp;X), and finds nothing. Right: MemoryGuard verifies the memory, detects that it is stale, refreshes it, navigates to the object's new location (green&nbsp;circle), and picks it up. Each side shows three synchronised views &mdash; the robot's camera, a third-person follow view, and a top-down map with the remembered location, the true object location, and the agent's path.</p>
+    <p class="caption">Top: MemoryGuard verifies the memory, detects that it is stale, refreshes it, navigates to the object's new location (green&nbsp;circle), and picks it up. Bottom: a passive agent acts on stale memory, arrives at the remembered location (red&nbsp;X), and finds nothing. Each side shows four synchronised views &mdash; the robot's camera, a third-person follow view, a fixed room camera, and a top-down map with the remembered location, the true object location, and the agent's path &mdash; plus a loop-stage progress bar and a verifier-decision card at the moment of verification.</p>
     <h3>Full-resolution runs</h3>
     <video controls muted loop playsinline preload="metadata">
       <source src="assets/FloorPlan1_Apple_7_comparison.mp4" type="video/mp4">
@@ -120,7 +120,7 @@
     <video controls muted loop playsinline preload="metadata">
       <source src="assets/m2_reliability_Box_163_active.mp4" type="video/mp4">
     </video>
-    <p class="caption">Baseline (top) and recovery (bottom) on the same case (<code>FloorPlan202 / Box / seed 163</code>), shown in three synchronised views (robot camera, third-person follow, top-down map) with a half-second hold per step so the turns are easy to follow. In the pre-registered randomized replication (30 rounds &times; 3 arms, 90 sessions), analyzed at the randomized-session level, the armed trigger recovered every observed pattern event &mdash; <b>8/8</b> pattern-present sessions vs <b>0/12</b> when disarmed (session-level Fisher exact p &lt; 1e-5) &mdash; with paired case success <b>60/60 vs 48/60</b> and the gain concentrated in 6 of 30 sessions (round-level paired randomization p = 0.032).</p>
+    <p class="caption">Baseline (top) and recovery (bottom) on the same case (<code>FloorPlan202 / Box / seed 163</code>), shown in four synchronised views (robot camera, third-person follow, fixed room camera, top-down map) with a half-second hold per step so the turns are easy to follow. In the pre-registered randomized replication (30 rounds &times; 3 arms, 90 sessions), analyzed at the randomized-session level, the armed trigger recovered every observed pattern event &mdash; <b>8/8</b> pattern-present sessions vs <b>0/12</b> when disarmed (session-level Fisher exact p &lt; 1e-5) &mdash; with paired case success <b>60/60 vs 48/60</b> and the gain concentrated in 6 of 30 sessions (round-level paired randomization p = 0.032).</p>
   </section>
 
   <section id="problem">

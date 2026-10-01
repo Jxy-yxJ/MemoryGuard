@@ -100,9 +100,9 @@
   <section id="demo">
     <h2>演示：被动失败 vs. 主动维护</h2>
     <div class="demo-media">
-      <img src="assets/demo_comparison.gif" alt="并排对比：被动智能体在旧位置失败；MemoryGuard 核验、刷新并完成抓取。">
+      <img src="assets/demo_comparison.gif" alt="上下对比：MemoryGuard 核验、刷新并完成抓取；被动智能体在旧位置失败。">
     </div>
-    <p class="caption">左：被动智能体按陈旧记忆行动，到达记忆中的旧位置（红 X）却一无所获。右：MemoryGuard 先核验记忆、判定其陈旧、刷新位置，再导航到物体的真实新位置（绿圈）并完成抓取。每侧同时显示三个同步视角——机器人视角、第三人称跟随视角、以及含记忆旧位置、物体真实位置与轨迹的俯视图。</p>
+    <p class="caption">上：MemoryGuard 先核验记忆、判定其陈旧、刷新位置，再导航到物体的真实新位置（绿圈）并完成抓取。下：被动智能体按陈旧记忆行动，到达记忆中的旧位置（红 X）却一无所获。每侧同时显示四个同步视角——机器人视角、第三人称跟随视角、固定机位、以及含记忆旧位置、物体真实位置与轨迹的俯视图——并带有循环阶段进度条与核验时刻的决策卡。</p>
     <h3>完整分辨率运行</h3>
     <video controls muted loop playsinline preload="metadata">
       <source src="assets/FloorPlan1_Apple_7_comparison.mp4" type="video/mp4">
@@ -119,7 +119,7 @@
     <video controls muted loop playsinline preload="metadata">
       <source src="assets/m2_reliability_Box_163_active.mp4" type="video/mp4">
     </video>
-    <p class="caption">同一案例（<code>FloorPlan202 / Box / seed 163</code>）的基线（上）与恢复（下），均为三个同步视角（机器人相机、第三人称跟随、俯视图），每步停留约半秒以便看清。预注册随机化复现（30 轮 × 3 臂、90 会话）按会话层级分析：武装触发在模式出现时恢复全部观测事件——<b>8/8</b> 个含模式会话对 <b>0/12</b> 关闭臂（会话级 Fisher 精确 p &lt; 1e-5）；配对案例成功率 <b>60/60 vs 48/60</b>，增益集中在 30 轮中的 6 轮（轮级配对随机化 p = 0.032）。</p>
+    <p class="caption">同一案例（<code>FloorPlan202 / Box / seed 163</code>）的基线（上）与恢复（下），均为四个同步视角（机器人相机、第三人称跟随、固定机位、俯视图），每步停留约半秒以便看清。预注册随机化复现（30 轮 × 3 臂、90 会话）按会话层级分析：武装触发在模式出现时恢复全部观测事件——<b>8/8</b> 个含模式会话对 <b>0/12</b> 关闭臂（会话级 Fisher 精确 p &lt; 1e-5）；配对案例成功率 <b>60/60 vs 48/60</b>，增益集中在 30 轮中的 6 轮（轮级配对随机化 p = 0.032）。</p>
   </section>
 
   <section id="problem">

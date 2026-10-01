@@ -10,9 +10,9 @@
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![python](https://img.shields.io/badge/python-3.11-3776ab.svg)](requirements.txt)
 
-<img src="figures/hero_three_views.png" width="92%" alt="MemoryGuard 在 AI2-THOR 中：机器人相机、第三人称跟随视角、俯视图。红色 X 是记忆中的（陈旧）位置，绿色圆圈是物体真实位置；机器人核验、刷新记忆并抓起物体。">
+<img src="figures/hero_four_views.png" width="92%" alt="MemoryGuard 在 AI2-THOR 中：机器人相机、第三人称跟随视角、固定机位、俯视图。红色 X 是记忆中的（陈旧）位置，绿色圆圈是物体真实位置；机器人核验、刷新记忆并抓起物体。">
 
-<sub><b>真实仿真帧</b>（FloorPlan5 / Knife / seed 163）：机器人相机 · 第三人称跟随 · 俯视图（红 X = 记忆中的陈旧位置，绿圈 = 真实位置）。完整配对演示见下方。</sub>
+<sub><b>真实仿真帧</b>（FloorPlan5 / Knife / seed 163）：机器人相机 · 第三人称跟随 · 固定机位 · 俯视图（红 X = 记忆中的陈旧位置，绿圈 = 真实位置）。完整配对演示见下方。</sub>
 
 [项目主页](https://jxy-yxj.github.io/MemoryGuard/zh.html) · [核心结果](#核心结果) · [演示视频](#演示视频) · [复现](#复现) · [English](README.md)
 
@@ -89,16 +89,30 @@ MemoryGuard 维护一组 `(类别, 位姿)` 对象记忆，并在其上运行一
 
 ![MemoryGuard 对比被动基线：并排演示](videos/demo_comparison.gif)
 
-*右：被动智能体按陈旧记忆行动，到达记忆中的旧位置（红 X）却一无所获。左：MemoryGuard 先核验记忆、
-判定其陈旧、刷新位置，再导航到物体的真实新位置（绿圈）并完成抓取。每侧同时显示三个同步视角——
-机器人视角、第三人称跟随视角、以及含记忆旧位置（红 X）、物体真实位置（绿圈）与轨迹的俯视图。视频由
-真实仿真帧渲染；完整分辨率片段见 [`videos/`](videos/)。*
+*上：MemoryGuard 先核验记忆、判定其陈旧、刷新位置，再导航到物体的真实新位置（绿圈）并完成抓取。
+下：被动智能体按陈旧记忆行动，到达记忆中的旧位置（红 X）却一无所获。每侧同时显示四个同步视角——
+机器人视角、第三人称跟随视角、固定机位、以及含记忆旧位置（红 X）、物体真实位置（绿圈）与轨迹的俯视图——
+并带有循环阶段进度条与核验时刻的决策卡。视频由真实仿真帧渲染；完整分辨率片段见 [`videos/`](videos/)。*
 
 Phase 3 增加了成对的可靠性演示：
 [失效模式](videos/m2_reliability_Box_163_baseline.mp4)（单视角把已移动的 Box 判为 "fresh"——
 不采取动作，任务失败）与 [恢复过程](videos/m2_reliability_Box_163_active.mp4)（换位姿复验翻转判定，
-刷新记忆并成功抓取）。两段视频均为三个同步视角（机器人相机、第三人称跟随、俯视图），每步画面停留约
+刷新记忆并成功抓取）。两段视频均为四个同步视角（机器人相机、第三人称跟随、固定机位、俯视图），每步画面停留约
 半秒以便看清转向，抓取成功后地图上出现 "Box in hand" 标记。
+
+<p align="center"><b>更多片段</b> — 点击海报帧可打开 MP4（四视角同步 + 阶段进度条 + 决策卡）：</p>
+<p align="center">
+  <a href="videos/FloorPlan1_Apple_7_active.mp4"><img src="videos/posters/apple_active.jpg" width="49%" alt="主动：核验、刷新并抓起 Apple"></a>
+  <a href="videos/FloorPlan1_Apple_7_passive.mp4"><img src="videos/posters/apple_passive.jpg" width="49%" alt="被动：按陈旧记忆行动并失败"></a>
+</p>
+<p align="center">
+  <a href="videos/FloorPlan5_Knife_163_active.mp4"><img src="videos/posters/knife_active.jpg" width="49%" alt="货架目标经有界位姿回退抓取成功"></a>
+  <a href="videos/FloorPlan6_Tomato_139_active.mp4"><img src="videos/posters/tomato_active.jpg" width="49%" alt="Tomato 主动案例"></a>
+</p>
+<p align="center">
+  <a href="videos/m2_reliability_Box_163_active.mp4"><img src="videos/posters/box163_active.jpg" width="49%" alt="复验翻转判定并抓起 Box"></a>
+  <a href="videos/m2_reliability_Box_163_baseline.mp4"><img src="videos/posters/box163_baseline.jpg" width="49%" alt="单视角 fresh 判定保留陈旧记忆"></a>
+</p>
 
 ---
 
